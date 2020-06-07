@@ -3,29 +3,29 @@
   --cupcake-mono: Consolas, monaco, 'Ubuntu Mono', 'Liberation Mono', 'Courier New', Courier, monospace;
   --cupcake-bg: #F7FAFC;
   --cupcake-text: #1A202C;
-  --cupcake-primary: #4C51BF;
-  --cupcake-secondary: #4C51BF;
-  --cupcake-highlight: #ECC94B;
-  --cupcake-muted: #718096;
+  --cupcake-primary: #07c;
+  --cupcake-secondary: #30c;
+  --cupcake-highlight: #07c;
+  --cupcake-muted: #ccc;
   --cupcake-softness: 0px;
 }
 
 .theme-dark {
-  --cupcake-bg: #1A202C;
+  --cupcake-bg: #060606;
   --cupcake-text: #F7FAFC;
-  --cupcake-primary: #ED8936;
-  --cupcake-secondary: #C05621;
-  --cupcake-highlight: #4FD1C5;
-  --cupcake-muted: #A0AEC0;
+  --cupcake-primary: #3cf;
+  --cupcake-secondary: #e0f;
+  --cupcake-highlight: #29112c;
+  --cupcake-muted: #555;
 }
 
 .theme-mint {
-  --cupcake-bg: #e6fffa;
-  --cupcake-text: #234E52;
-  --cupcake-primary: #B83280;
-  --cupcake-secondary: #4FD1C5;
-  --cupcake-highlight: #4FD1C5;
-  --cupcake-muted: #A0AEC0;
+  --cupcake-bg: #E6FFFA;
+  --cupcake-text: #2A4365;
+  --cupcake-primary: #D53F8C;
+  --cupcake-secondary: #B83280;
+  --cupcake-highlight: #E53E3E;
+  --cupcake-muted: #2C7A7B;
   --cupcake-softness: 2rem;
 }
 
@@ -39,6 +39,7 @@ html {
   background-color: var(--cupcake-bg);
   line-height: 1.5;
   font-size: 16px;
+  transition: all .25s;
 }
 
 body {
@@ -88,6 +89,20 @@ pre {
 }
 
 /* Forms */
+button {
+  background-color: var(--cupcake-primary);
+  color: var(--cupcake-bg);
+  border: 1px solid var(--cupcake-primary);
+  padding: .25rem .5rem;
+  outline: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--cupcake-secondary);
+  border-color: var(--cupcake-secondary);
+}
+
 form label {
   display: block;
   font-size: 0.75rem;
@@ -99,12 +114,9 @@ form input {
   margin-bottom: .5rem;
   padding: .25rem .5rem;
   width: 100%;
-}
-
-form input {
   background-color: var(--cupcake-bg);
   color: var(--cupcake-text);
-  border: 1px solid var(--cupcake-text);
+  border: 1px solid var(--cupcake-muted);
 }
 
 form input[type="radio"],
