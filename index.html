@@ -1,32 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-default">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🧁 cupcake.css</title>
   <meta name="description" content="A classless CSS framework to sweeten up your html pages">
   <link rel="stylesheet" href="cupcake.css">
+  <script src="./themeSwitcher.js"></script>
 </head>
 <body>
 
   <header>
     <h1>🧁 cupcake.css</h1>
-    <nav>
-      <ul>
-        <li>
-          <a href="index.html">Default</a>
-        </li>
-        <li>
-          <a href="dark.html">Dark</a>
-        </li>
-        <li>
-          <a href="mint.html">Mint</a>
-        </li>
-      </ul>
-    </nav>
+    <button onclick="toggleDefaultTheme()">Default</button>
+    <button onclick="toggleSecondTheme()">Dark</button>
+    <button onclick="toggleThirdTheme()">Mint</button>
   </header>
 
   <main>
+
+    <form action="">
+
+      <fieldset>
+        <legend>Personal Details</legend>
+        <label for="username">Desired Username:</label>
+        <input type="text" id="username">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email">
+        <label for="date">Date of Birth:</label>
+        <input type="date" id="date">
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit">
+      </fieldset>
+      
+      <fieldset>
+        <legend>Contact Details</legend>
+        <label for="address">Home Address:</label>
+        <input type="text" id="address">
+        <label for="postal">Postal Code:</label>
+        <input type="text" id="postal">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone">
+      </fieldset>
+      
+      <fieldset>
+        <legend>Select an Option</legend>
+        <label for="radio-1">
+            <input type="radio" id="radio-1" name="radio-choice">
+            The option is pretty nice
+        </label>
+        <label for="radio-2">
+            <input type="radio" id="radio-2" name="radio-choice">
+            This option is a little bit better
+        </label>
+        <label for="radio-3">
+            <input type="radio" id="radio-3" name="radio-choice">
+            This option is the best
+        </label>
+      </fieldset>
+      
+      <fieldset>
+          <legend>Notifications</legend>
+          <label for="checkbox-1">
+              <input type="checkbox" id="checkbox-1">
+              I would like to receive email notifications
+          </label>
+          <label for="checkbox-2">
+              <input type="checkbox" id="checkbox-2">
+              I would like to subscribe to the weekly newsletter
+          </label>
+      </fieldset>
+    
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit">
+      </form>
+
     <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h1>
     <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
     <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
