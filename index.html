@@ -11,6 +11,7 @@
 
   <header>
     <h1>🧁 cupcake.css</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non delectus suscipit optio tenetur iusto numquam odio quidem maxime nulla dolores maiores, hic quos consectetur perferendis, illo deserunt illum architecto totam id? Ut.</p>
   </header>
 
   <main>
@@ -23,6 +24,8 @@
     <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h6>
 
     <button>Call to action</button>
+
+    <img src="https://picsum.photos/1000/500" alt="Lorem Picsum">
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta placeat exercitationem minima nostrum quas tempora neque quo iure ea facilis, optio ad, in, quisquam praesentium earum eaque aut officiis sunt nobis rerum. Provident explicabo assumenda neque deleniti adipisci delectus fugit vel iure ab ex. Ratione laborum alias non facilis voluptatibus illum, eveniet quod commodi est, amet porro labore ea consequuntur rem repellat maxime unde recusandae iure asperiores accusantium vitae voluptatum harum assumenda? Consectetur fugit fuga aliquid reprehenderit quia est, ullam illo ut quos architecto reiciendis, repudiandae natus officia consequuntur saepe quo laudantium debitis commodi sunt placeat quis inventore asperiores distinctio.</p>
 
@@ -87,8 +90,23 @@
   </main>
 
   <footer>
-    
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum delectus in eos veritatis ad aliquid ipsa, doloremque fugit magni dolorem veniam, sunt facilis laudantium possimus quo quos laborum vero non sequi, corporis tenetur? Obcaecati omnis porro unde. Doloremque, ut accusantium repudiandae id, corporis magni corrupti atque fugiat voluptatem minima odit, blanditiis quod harum quidem eaque eligendi. Natus, commodi alias vel excepturi eveniet beatae repellat eum amet debitis earum? Vel voluptatem aperiam pariatur deserunt omnis earum maxime porro consequatur fuga in, quod magnam cumque a autem et dolorum repudiandae. Nam ut odit repudiandae voluptas velit officiis commodi cumque nesciunt libero rerum.</p>
   </footer>
   
+
+  <script>
+    (function (d) {
+    var w = d.documentElement.offsetWidth,
+        t = d.createTreeWalker(d.body, NodeFilter.SHOW_ELEMENT),
+        b;
+    while (t.nextNode()) {
+        b = t.currentNode.getBoundingClientRect();
+        if (b.right > w || b.left < 0) {
+            t.currentNode.style.setProperty('outline', '1px solid red', 'important');
+            console.log(t.currentNode);
+        }
+    };
+}(document))
+  </script>
 </body>
 </html>

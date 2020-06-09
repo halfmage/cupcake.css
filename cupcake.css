@@ -1,12 +1,11 @@
 :root {
   --cupcake-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --cupcake-mono: Consolas, monaco, 'Ubuntu Mono', 'Liberation Mono', 'Courier New', Courier, monospace;
-
   --cupcake-text: rgba(0,0,0, .87);
   --cupcake-background: #fafafa;
   --cupcake-primary: #1976d2;
   --cupcake-secondary: #dc004e;
-  --cupcake-highlight: #07c;
+  --cupcake-highlight: #fff;
   --cupcake-muted: rgba(0,0,0,.08);
   --cupcake-gray: rgba(0,0,0, .12);
   --cupcake-accent: rgba(0,0,0, .38);
@@ -22,19 +21,39 @@ html {
   font-family: var(--cupcake-sans);
   background-color: var(--cupcake-background);
   line-height: 1.5;
-  font-size: 16px;
+  font-size: 18px;
   transition: all .25s;
 }
 
 body {
   margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  max-width: 768px;
+  padding: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
-body > header {
-  margin-bottom: 2rem;
+main {
+  padding-left: calc(50vw - 50%);
+}
+
+body > header,
+body > footer {
+  background-color: var(--cupcake-muted);
+  border-bottom: 1px solid var(--cupcake-gray);
+}
+
+body > header > :first-child,
+body > footer > :first-child {
+  margin-top: 0;
+}
+
+body > header > :last-child,
+body > footer > :last-child {
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
 }
 
 
