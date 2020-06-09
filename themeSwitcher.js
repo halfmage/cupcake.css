@@ -1,3 +1,8 @@
+// Html snippet
+<button onclick="toggleDefaultTheme()">Default</button>
+<button onclick="toggleSecondTheme()">Dark</button>
+<button onclick="toggleThirdTheme()">Mint</button>
+
 // Set a given theme/color-scheme
 function setTheme(themeName) {
   localStorage.setItem('theme', themeName);
