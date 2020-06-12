@@ -11,10 +11,59 @@
 
   <header>
     <h1>🧁 cupcake.css</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non delectus suscipit optio tenetur iusto numquam odio quidem maxime nulla dolores maiores, hic quos consectetur perferendis, illo deserunt illum architecto totam id? Ut.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/">Documentation</a>
+        </li>
+        <li>
+          <a href="/">Dark Mode</a>
+        </li>
+      </ul>
+    </nav>
   </header>
 
   <main>
+
+    <h1>Elements</h1>
+    <p>With cupcake.css you can easily sweeten up your boring HTML or Markdown pages. In the following I added some best-use examples including code snippets so you get the best results out of your HTML files.</p>
+    
+    <hr>
+
+    <h2 id="anchor-layout">Layout</h2>
+    <p>The basic layout is divided in three sections. First the <code>&lt;header&gt;</code> which ideally contains the page title, short description and the navigation. Followed by the <code>&lt;header&gt;</code></p>
+
+    <pre>
+&lt;html&gt;
+  &lt;header&gt;
+    &lt;link rel="stylesheet" href="cupcake.css"&gt;
+  &lt;/header&gt;
+  &lt;body&gt;
+    &lt;header&gt;&lt;/header&gt;
+    &lt;main&gt;&lt;/main&gt;
+    &lt;footer&gt;&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+    <hr>
+
+    <h2>Accordion</h2>
+
+    <details>
+      <summary>Accordion header</summary>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat nesciunt alias deleniti animi voluptatibus reprehenderit dignissimos libero culpa aliquid cupiditate.</p>
+    </details>
+    <pre>
+&lt;details&gt;
+  &lt;summary&gt;Accordion header&lt;/summary&gt;
+  &lt;p&gt;Lorem ipsum, dolor sit amet consectetur...&lt;/p&gt;
+&lt;/details&gt;</pre>
+
+    <hr>
 
     <h1>A classless CSS framework to sweeten up your...</h1>
     <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
@@ -25,7 +74,7 @@
 
     <button>Call to action</button>
 
-    <img src="https://picsum.photos/1000/500" alt="Lorem Picsum">
+    <img src="https://images.pexels.com/photos/268364/pexels-photo-268364.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" alt="Lorem Picsum">
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta placeat exercitationem minima nostrum quas tempora neque quo iure ea facilis, optio ad, in, quisquam praesentium earum eaque aut officiis sunt nobis rerum. Provident explicabo assumenda neque deleniti adipisci delectus fugit vel iure ab ex. Ratione laborum alias non facilis voluptatibus illum, eveniet quod commodi est, amet porro labore ea consequuntur rem repellat maxime unde recusandae iure asperiores accusantium vitae voluptatum harum assumenda? Consectetur fugit fuga aliquid reprehenderit quia est, ullam illo ut quos architecto reiciendis, repudiandae natus officia consequuntur saepe quo laudantium debitis commodi sunt placeat quis inventore asperiores distinctio.</p>
 
@@ -92,21 +141,5 @@
   <footer>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum delectus in eos veritatis ad aliquid ipsa, doloremque fugit magni dolorem veniam, sunt facilis laudantium possimus quo quos laborum vero non sequi, corporis tenetur? Obcaecati omnis porro unde. Doloremque, ut accusantium repudiandae id, corporis magni corrupti atque fugiat voluptatem minima odit, blanditiis quod harum quidem eaque eligendi. Natus, commodi alias vel excepturi eveniet beatae repellat eum amet debitis earum? Vel voluptatem aperiam pariatur deserunt omnis earum maxime porro consequatur fuga in, quod magnam cumque a autem et dolorum repudiandae. Nam ut odit repudiandae voluptas velit officiis commodi cumque nesciunt libero rerum.</p>
   </footer>
-  
-
-  <script>
-    (function (d) {
-    var w = d.documentElement.offsetWidth,
-        t = d.createTreeWalker(d.body, NodeFilter.SHOW_ELEMENT),
-        b;
-    while (t.nextNode()) {
-        b = t.currentNode.getBoundingClientRect();
-        if (b.right > w || b.left < 0) {
-            t.currentNode.style.setProperty('outline', '1px solid red', 'important');
-            console.log(t.currentNode);
-        }
-    };
-}(document))
-  </script>
 </body>
 </html>

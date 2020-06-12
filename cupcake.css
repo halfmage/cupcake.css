@@ -1,19 +1,65 @@
 :root {
   --cupcake-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --cupcake-mono: Consolas, monaco, 'Ubuntu Mono', 'Liberation Mono', 'Courier New', Courier, monospace;
-  --cupcake-text: rgba(0,0,0, .87);
-  --cupcake-background: #fafafa;
-  --cupcake-primary: #1976d2;
-  --cupcake-secondary: #dc004e;
-  --cupcake-highlight: #fff;
-  --cupcake-muted: rgba(0,0,0,.08);
-  --cupcake-gray: rgba(0,0,0, .12);
-  --cupcake-accent: rgba(0,0,0, .38);
-  --cupcake-darken: rgba(0,0,0, .54);
+  --cupcake-text: #111;
+  --cupcake-background: #fff;
+  --cupcake-primary: #00f;
+  --cupcake-secondary: #00f;
+  --cupcake-highlight: #0ff;
+  --cupcake-muted: #f5f5f5;
+  --cupcake-gray: #e5e5e5;
+  --cupcake-accent: #999;
+  --cupcake-darken: #333;
 }
 
 * {
   box-sizing: border-box;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--cupcake-muted);
+  margin: 2rem 0;
+}
+
+code {
+  background-color: var(--cupcake-muted);
+  font-family: var(--cupcake-mono);
+  padding: .125rem .25rem;
+  border-radius: 4px;
+}
+
+pre {
+  background-color: var(--cupcake-muted);
+  border: 1px solid  var(--cupcake-gray);
+  color: var(--cupcake-darken);
+  padding: 1rem;
+  overflow: auto;
+  position: relative;
+}
+
+details {
+  background-color: var(--cupcake-muted);
+  border: 1px solid var(--cupcake-gray);
+}
+
+details summary {
+  padding: 1rem;
+  outline: none;
+  cursor: pointer;
+  list-style: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a0aec0'%3e%3cpath d='M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3e%3c/svg%3e");
+  background-position: right 1rem center;
+  background-size: 2em;
+  background-repeat: no-repeat;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details p {
+  padding: 0 1rem;
 }
 
 html {
@@ -21,8 +67,10 @@ html {
   font-family: var(--cupcake-sans);
   background-color: var(--cupcake-background);
   line-height: 1.5;
-  font-size: 18px;
+  font-size: 16px;
   transition: all .25s;
+  overflow-y:scroll;
+  overflow-x: hidden;
 }
 
 body {
@@ -30,16 +78,28 @@ body {
   padding: 0;
   word-break: break-word;
   overflow-wrap: break-word;
+  max-width: 48em;
+
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-  padding-left: calc(50vw - 50%);
+  padding: 0 2rem;
+  flex: 1; /* extends main area */
 }
 
 body > header,
 body > footer {
   background-color: var(--cupcake-muted);
-  border-bottom: 1px solid var(--cupcake-gray);
+
+  margin-left: calc( 0px - (50vw - 50%));
+  margin-right: calc( 0px - (50vw - 50%));
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left:calc((50vw - 50%) + 2rem );
+  padding-right:calc((50vw - 50%) + 2rem );
 }
 
 body > header > :first-child,
@@ -50,6 +110,20 @@ body > footer > :first-child {
 body > header > :last-child,
 body > footer > :last-child {
   margin-bottom: 0;
+}
+
+body > header nav ul {
+  margin-bottom: 0;
+  list-style: none;
+  padding: 0;
+}
+
+body > header nav ul li {
+  display: inline-block;
+}
+
+body > header nav ul li + li {
+  margin-left: 0.5rem;
 }
 
 img {
@@ -87,13 +161,6 @@ dd {
   padding-left: 1rem;
 }
 
-pre {
-  padding: 1rem;
-  background-color: rgba(76, 82, 191, 0.1);
-  color: var(--cupcake-text);
-  border-radius: var(--cupcake-softness);
-}
-
 /* Forms */
 button,
 input[type="submit"] {
@@ -129,9 +196,9 @@ form input {
   margin-bottom: .5rem;
   padding: .75rem .5rem;
   width: 100%;
-  background-color: var(--cupcake-bg);
+  background-color: var(--cupcake-muted);
   color: var(--cupcake-text);
-  border: 1px solid var(--cupcake-muted);
+  border: 1px solid var(--cupcake-gray);
 }
 
 form input[type="radio"],
