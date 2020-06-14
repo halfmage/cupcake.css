@@ -3,13 +3,27 @@
   --cupcake-mono: Consolas, monaco, 'Ubuntu Mono', 'Liberation Mono', 'Courier New', Courier, monospace;
   --cupcake-text: #111;
   --cupcake-background: #fff;
-  --cupcake-primary: #00f;
-  --cupcake-secondary: #00f;
-  --cupcake-highlight: #0ff;
-  --cupcake-muted: #f5f5f5;
-  --cupcake-gray: #e5e5e5;
-  --cupcake-accent: #999;
-  --cupcake-darken: #333;
+  --cupcake-primary: #E6808A;
+  --cupcake-secondary: #008272;
+  --cupcake-highlight: #B3E8DF;
+  --cupcake-muted: #FCE6EB;
+  --cupcake-gray: #ccc;
+  --cupcake-accent: #F4ABBA;
+  --cupcake-darken: #00B294;
+}
+
+@media (prefers-color-scheme: dark) {
+:root {
+  --cupcake-text: #fff;
+  --cupcake-background: #111;
+  --cupcake-primary: #E6808A;
+  --cupcake-secondary: #008272;
+  --cupcake-highlight: #B3E8DF;
+  --cupcake-muted: #8d4e55;
+  --cupcake-gray: #ccc;
+  --cupcake-accent: #F4ABBA;
+  --cupcake-darken: #00B294;
+}
 }
 
 * {
@@ -31,8 +45,8 @@ code {
 
 pre {
   background-color: var(--cupcake-muted);
-  border: 1px solid  var(--cupcake-gray);
-  color: var(--cupcake-darken);
+  border: 1px solid  var(--cupcake-accent);
+  color: var(--cupcake-text);
   padding: 1rem;
   overflow: auto;
   position: relative;
@@ -40,7 +54,7 @@ pre {
 
 details {
   background-color: var(--cupcake-muted);
-  border: 1px solid var(--cupcake-gray);
+  border: 1px solid var(--cupcake-accent);
 }
 
 details summary {
@@ -48,7 +62,7 @@ details summary {
   outline: none;
   cursor: pointer;
   list-style: none;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a0aec0'%3e%3cpath d='M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' %3e%3cpath d='M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3e%3c/svg%3e");
   background-position: right 1rem center;
   background-size: 2em;
   background-repeat: no-repeat;
@@ -76,8 +90,6 @@ html {
 body {
   margin: 0 auto;
   padding: 0;
-  word-break: break-word;
-  overflow-wrap: break-word;
   max-width: 48em;
 
   display: flex;
@@ -91,13 +103,16 @@ main {
 
 body > header,
 body > footer {
-  background-color: var(--cupcake-muted);
+  text-align: center;
+
+  background-color: var(--cupcake-background);
+  border-bottom: 1px solid var(--cupcake-muted);
 
   margin-left: calc( 0px - (50vw - 50%));
   margin-right: calc( 0px - (50vw - 50%));
 
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   padding-left:calc((50vw - 50%) + 2rem );
   padding-right:calc((50vw - 50%) + 2rem );
 }
@@ -110,6 +125,14 @@ body > footer > :first-child {
 body > header > :last-child,
 body > footer > :last-child {
   margin-bottom: 0;
+}
+
+body > header img {
+  max-width: 6rem;
+}
+
+body > header > img + h1 {
+  margin-top: 0;
 }
 
 body > header nav ul {
@@ -128,6 +151,7 @@ body > header nav ul li + li {
 
 img {
   max-width: 100%;
+  display: inline-block;
 }
 
 
