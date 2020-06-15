@@ -1,100 +1,69 @@
+/* default theme */
+
 :root {
   --cupcake-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --cupcake-mono: Consolas, monaco, 'Ubuntu Mono', 'Liberation Mono', 'Courier New', Courier, monospace;
-  --cupcake-text: #111;
   --cupcake-background: #fff;
-  --cupcake-primary: #E6808A;
-  --cupcake-secondary: #008272;
-  --cupcake-highlight: #B3E8DF;
-  --cupcake-muted: #FCE6EB;
-  --cupcake-gray: #ccc;
-  --cupcake-accent: #F4ABBA;
-  --cupcake-darken: #00B294;
+  --cupcake-text: #111;
+  --cupcake-primary: #07c;
+  --cupcake-secondary: #30c;
+  --cupcake-muted: #f6f6f6;
+  --cupcake-highlight: #EFEFFE;
+  --cupcake-gray: #999;
+  --cupcake-accent: #3cf;
+  --cupcake-darken: #fff;
 }
 
+
+/* default dark theme */
+
 @media (prefers-color-scheme: dark) {
-:root {
-  --cupcake-text: #fff;
-  --cupcake-background: #111;
-  --cupcake-primary: #E6808A;
-  --cupcake-secondary: #008272;
-  --cupcake-highlight: #B3E8DF;
-  --cupcake-muted: #8d4e55;
-  --cupcake-gray: #ccc;
-  --cupcake-accent: #F4ABBA;
-  --cupcake-darken: #00B294;
-}
+  :root {
+    --cupcake-background: #212121;
+    --cupcake-text: #fff;
+    --cupcake-primary: #3cf;
+    --cupcake-secondary: #e0f;
+    --cupcake-muted: #191919;
+    --cupcake-highlight: #29112c;
+    --cupcake-gray: #999;
+    --cupcake-accent: #ff0;
+    --cupcake-darken: #fff;
+  }
 }
 
 * {
   box-sizing: border-box;
 }
 
-hr {
-  border: 0;
-  border-top: 1px solid var(--cupcake-muted);
-  margin: 2rem 0;
-}
 
-code {
-  background-color: var(--cupcake-muted);
-  font-family: var(--cupcake-mono);
-  padding: .125rem .25rem;
-  border-radius: 4px;
-}
-
-pre {
-  background-color: var(--cupcake-muted);
-  border: 1px solid  var(--cupcake-accent);
-  color: var(--cupcake-text);
-  padding: 1rem;
-  overflow: auto;
-  position: relative;
-}
-
-details {
-  background-color: var(--cupcake-muted);
-  border: 1px solid var(--cupcake-accent);
-}
-
-details summary {
-  padding: 1rem;
-  outline: none;
-  cursor: pointer;
-  list-style: none;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' %3e%3cpath d='M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3e%3c/svg%3e");
-  background-position: right 1rem center;
-  background-size: 2em;
-  background-repeat: no-repeat;
-}
-
-details > summary::-webkit-details-marker {
-  display: none;
-}
-
-details p {
-  padding: 0 1rem;
-}
+/* base styles */
 
 html {
-  color: var(--cupcake-text);
-  font-family: var(--cupcake-sans);
-  background-color: var(--cupcake-background);
   line-height: 1.5;
   font-size: 16px;
   transition: all .25s;
-  overflow-y:scroll;
+  overflow-y: scroll;
   overflow-x: hidden;
+
+  background-color: var(--cupcake-background);
+  color: var(--cupcake-text);
+  font-family: var(--cupcake-sans);
 }
 
 body {
   margin: 0 auto;
   padding: 0;
   max-width: 48em;
-
   display: flex;
   flex-direction: column;
 }
+
+::selection {
+  background: var(--cupcake-highlight);
+}
+
+
+/* Layout styles */
 
 main {
   padding: 0 2rem;
@@ -104,9 +73,7 @@ main {
 body > header,
 body > footer {
   text-align: center;
-
-  background-color: var(--cupcake-background);
-  border-bottom: 1px solid var(--cupcake-muted);
+  background-color: var(--cupcake-muted);
 
   margin-left: calc( 0px - (50vw - 50%));
   margin-right: calc( 0px - (50vw - 50%));
@@ -127,7 +94,7 @@ body > footer > :last-child {
   margin-bottom: 0;
 }
 
-body > header img {
+body > header > img {
   max-width: 6rem;
 }
 
@@ -149,29 +116,75 @@ body > header nav ul li + li {
   margin-left: 0.5rem;
 }
 
+
+/* Component styles */
+
 img {
   max-width: 100%;
   display: inline-block;
 }
-
 
 h1,h2,h3,h4,h5,h6 {
   line-height: 1.25;
 }
 
 small {
-  font-size: var(--cupcake-small);
-  color: var(--cupcake-darken);
+  font-size: .85rem;
 }
 
 a {
   color: var(--cupcake-primary);
   text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all .25s;
 }
 
 a:hover {
-  text-decoration: underline;
   color: var(--cupcake-secondary);
+  border-bottom: 1px solid var(--cupcake-secondary);
+}
+
+blockquote {
+  border-left: .25rem solid var(--cupcake-highlight);
+  margin-left: 0;
+  padding: .5rem 1.5rem;
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+hr {
+  border: 0;
+  margin: 2rem 0;
+  height: 1px;
+  background-color: var(--cupcake-highlight);
+}
+
+code {
+  background-color: var(--cupcake-highlight);
+  color: var(--cupcake-secondary);
+  padding: .125rem .25rem;
+  border-radius: 4px;
+}
+
+pre {
+  background-color: var(--cupcake-muted);
+  padding: 1rem;
+  overflow: auto;
+  position: relative;
+}
+
+details {
+  border: 2px solid var(--cupcake-muted);
+}
+
+details summary {
+  padding: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+details p {
+  padding: 0 1rem;
 }
 
 dt {
@@ -180,33 +193,32 @@ dt {
 }
 
 dd {
-  border-left: .25rem solid var(--cupcake-secondary);
   margin-left: 1rem;
   padding-left: 1rem;
 }
 
 /* Forms */
+
 button,
-input[type="submit"] {
-  background-color: var(--cupcake-primary);
-  color: var(--cupcake-background);
-  border: 1px solid var(--cupcake-primary);
+input[type="submit"],
+input[type="reset"] {
+  font-size: 1rem;
   padding: .75rem 1rem;
   outline: none;
   cursor: pointer;
+}
+
+button,
+input[type="submit"] {
+  border: 1px solid var(--cupcake-primary);
+  background: var(--cupcake-primary);
+  color: var(--cupcake-background);
 }
 
 input[type="reset"] {
-  color: var(--cupcake-text);
-  border: 1px solid var(--cupcake-gray);
-  padding: .75rem 1rem;
-  outline: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: var(--cupcake-secondary);
-  border-color: var(--cupcake-secondary);
+  border: 1px solid var(--cupcake-primary);
+  background: var(--cupcake-background);
+  color: var(--cupcake-primary);
 }
 
 form label {
@@ -215,14 +227,20 @@ form label {
   cursor: pointer;
 }
 
-form input {
+input {
   display: inline-block;
   margin-bottom: .5rem;
   padding: .75rem .5rem;
   width: 100%;
-  background-color: var(--cupcake-muted);
+  font-size: 1rem;
   color: var(--cupcake-text);
-  border: 1px solid var(--cupcake-gray);
+  background-color: var(--cupcake-muted);
+  border: 2px solid var(--cupcake-muted);
+}
+
+input:focus {
+  outline: 0;
+  border-color: var(--cupcake-accent);
 }
 
 form input[type="radio"],
@@ -233,16 +251,16 @@ form input[type="submit"] {
 }
 
 legend {
-  background-color: var(--cupcake-muted);
-  padding: .25rem .5rem;
+  padding: .25rem 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+  margin: 0 auto;
 }
 
 fieldset {
-  background-color: var(--cupcake-bg-secondary);
-  border: 1px solid var(--cupcake-muted);
   padding: 1rem 1.5rem 1.5rem;
-  margin: 0;
-  border-radius: var(--cupcake-softness);
+  margin: 2rem 0;
+  border: 2px solid var(--cupcake-muted);
 }
 
 fieldset + fieldset {
