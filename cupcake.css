@@ -60,6 +60,23 @@ nav ul li {
   display: inline-block;
 }
 
+audio,
+video,
+canvas,
+meter,
+progress,
+iframe {
+  width: 100%;
+}
+
+meter {
+  height: 1rem;
+}
+
+meter::-webkit-meter-bar {
+  background-color: var(--cupcake-gray);
+  border: 0;
+}
 
 hr {
   border: 0;
