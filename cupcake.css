@@ -9,25 +9,22 @@
   --cupcake-secondary: #30c;
   --cupcake-muted: #f6f6f6;
   --cupcake-highlight: #EFEFFE;
-  --cupcake-gray: #999;
+  --cupcake-gray: #ccc;
   --cupcake-accent: #3cf;
   --cupcake-darken: #fff;
 }
 
-
-/* default dark theme */
-
 @media (prefers-color-scheme: dark) {
   :root {
-    --cupcake-background: #212121;
+    --cupcake-background: #111;
     --cupcake-text: #fff;
     --cupcake-primary: #3cf;
-    --cupcake-secondary: #e0f;
+    --cupcake-secondary: #30c;
     --cupcake-muted: #191919;
-    --cupcake-highlight: #29112c;
-    --cupcake-gray: #999;
-    --cupcake-accent: #ff0;
-    --cupcake-darken: #fff;
+    --cupcake-highlight: #333;
+    --cupcake-gray: #555;
+    --cupcake-accent: #3cf;
+    --cupcake-darken: #111;
   }
 }
 
@@ -35,238 +32,177 @@
   box-sizing: border-box;
 }
 
-
-/* base styles */
-
 html {
-  line-height: 1.5;
   font-size: 16px;
-  transition: all .25s;
-  overflow-y: scroll;
-  overflow-x: hidden;
-
-  background-color: var(--cupcake-background);
+  line-height: 1.5;
   color: var(--cupcake-text);
   font-family: var(--cupcake-sans);
+  background-color: var(--cupcake-background);
 }
 
 body {
-  margin: 0 auto;
-  padding: 0;
-  max-width: 48em;
-  display: flex;
-  flex-direction: column;
+  margin: 0;
+  width: 768px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-::selection {
-  background: var(--cupcake-highlight);
+body > header {
+  padding: 2rem 0;
 }
 
-
-/* Layout styles */
-
-main {
-  padding: 0 2rem;
-  flex: 1; /* extends main area */
-}
-
-body > header,
-body > footer {
-  text-align: center;
-  background-color: var(--cupcake-muted);
-
-  margin-left: calc( 0px - (50vw - 50%));
-  margin-right: calc( 0px - (50vw - 50%));
-
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  padding-left:calc((50vw - 50%) + 2rem );
-  padding-right:calc((50vw - 50%) + 2rem );
-}
-
-body > header > :first-child,
-body > footer > :first-child {
-  margin-top: 0;
-}
-
-body > header > :last-child,
-body > footer > :last-child {
-  margin-bottom: 0;
-}
-
-body > header > img {
-  max-width: 6rem;
-}
-
-body > header > img + h1 {
-  margin-top: 0;
-}
-
-body > header nav ul {
-  margin-bottom: 0;
-  list-style: none;
+nav ul {
+  list-style-type: none;
   padding: 0;
 }
 
-body > header nav ul li {
+nav ul li {
   display: inline-block;
 }
 
-body > header nav ul li + li {
-  margin-left: 0.5rem;
+
+hr {
+  border: 0;
+  height: 1px;
+  margin: 1.5rem 0;
+  background-color: var(--cupcake-highlight);
 }
 
+h1, h2, h3, h4 {
+  line-height: 1.3;
+}
 
-/* Component styles */
+a {
+  color: var(--cupcake-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--cupcake-secondary);
+  text-decoration: underline;
+}
 
 img {
   max-width: 100%;
   display: inline-block;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  line-height: 1.25;
-}
-
-small {
-  font-size: .85rem;
-}
-
-a {
-  color: var(--cupcake-primary);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: all .25s;
-}
-
-a:hover {
-  color: var(--cupcake-secondary);
-  border-bottom: 1px solid var(--cupcake-secondary);
-}
-
 blockquote {
-  border-left: .25rem solid var(--cupcake-highlight);
-  margin-left: 0;
-  padding: .5rem 1.5rem;
-  font-style: italic;
-  font-size: 1.25rem;
-}
-
-hr {
-  border: 0;
-  margin: 2rem 0;
-  height: 1px;
-  background-color: var(--cupcake-highlight);
-}
-
-code {
-  background-color: var(--cupcake-highlight);
-  color: var(--cupcake-secondary);
-  padding: .125rem .25rem;
-  border-radius: 4px;
-}
-
-pre {
+  border-left: .25rem solid var(--cupcake-gray);
   background-color: var(--cupcake-muted);
-  padding: 1rem;
-  overflow: auto;
-  position: relative;
+  margin-left: 0;
+  padding: 1rem 2rem;
 }
 
-details {
-  border: 2px solid var(--cupcake-muted);
+label {
+  display: block;
 }
 
-details summary {
-  padding: 1rem;
-  outline: none;
-  cursor: pointer;
+label + label,
+input + label {
+  margin-top: .75rem;
 }
 
-details p {
-  padding: 0 1rem;
+label + input {
+  margin-top: 0.25rem;
 }
-
-dt {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-dd {
-  margin-left: 1rem;
-  padding-left: 1rem;
-}
-
-/* Forms */
 
 button,
-input[type="submit"],
-input[type="reset"] {
+input {
+  font-family: var(--cupcake-sans);
   font-size: 1rem;
+  background-color: var(--cupcake-background);
+  border: 1px solid var(--cupcake-gray);
+  box-shadow: none;
+  display: block;
   padding: .75rem 1rem;
-  outline: none;
+  width: 100%;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  border: 0;
+  width: auto;
+  display: inline-block;
   cursor: pointer;
+}
+
+button,
+input[type="reset"],
+input[type="submit"] {
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+button[type="reset"],
+input[type="reset"] {
+  color: var(--cupcake-primary);
+  border: 1px solid var(--cupcake-primary);
+  background-color: var(--cupcake-background);
 }
 
 button,
 input[type="submit"] {
-  border: 1px solid var(--cupcake-primary);
-  background: var(--cupcake-primary);
   color: var(--cupcake-background);
-}
-
-input[type="reset"] {
   border: 1px solid var(--cupcake-primary);
-  background: var(--cupcake-background);
-  color: var(--cupcake-primary);
+  background-color: var(--cupcake-primary);
 }
 
-form label {
-  display: block;
-  margin-bottom: 0.25rem;
+input[type="range"] {
+  padding-left: 0;
+  padding-right: 0;
   cursor: pointer;
 }
 
-input {
-  display: inline-block;
-  margin-bottom: .5rem;
-  padding: .75rem .5rem;
-  width: 100%;
-  font-size: 1rem;
-  color: var(--cupcake-text);
-  background-color: var(--cupcake-muted);
-  border: 2px solid var(--cupcake-muted);
-}
-
-input:focus {
-  outline: 0;
-  border-color: var(--cupcake-accent);
-}
-
-form input[type="radio"],
-form input[type="checkbox"],
-form input[type="reset"],
-form input[type="submit"] {
-  width: auto;
-}
-
-legend {
-  padding: .25rem 1rem;
-  text-align: center;
-  font-size: 1.25rem;
-  margin: 0 auto;
-}
-
 fieldset {
-  padding: 1rem 1.5rem 1.5rem;
-  margin: 2rem 0;
-  border: 2px solid var(--cupcake-muted);
+  border: 1px solid var(--cupcake-gray);
+  padding: 2rem;
 }
 
 fieldset + fieldset {
+  margin-top: 2rem;
+}
+
+legend {
+  padding: 0 1rem;
+  margin-left: -1rem;
+}
+
+caption {
+  margin: .5rem 0;
+}
+
+table {
+  width: 100%;
+}
+
+table, td, th, tr {
+  border: 1px solid var(--cupcake-gray);
+  border-collapse: collapse;
+}
+
+th {
+  background-color: var(--cupcake-muted);
+}
+
+th, td {
+  padding: 0.5rem;
+}
+
+dl {
+
+}
+
+dl + dl {
   margin-top: 1rem;
 }
 
-label + input + label {
-  margin-top: .5rem;
+dt {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+dd::before {
+  content: "➜";
+  margin-right: 0.5rem;
 }
