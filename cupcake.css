@@ -1,14 +1,16 @@
 /* default theme */
 
 :root {
-  --cupcake-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --cupcake-mono: Consolas, monaco, 'Ubuntu Mono', 'Liberation Mono', 'Courier New', Courier, monospace;
+  --cupcake-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --cupcake-mono: Consolas, monaco, "Ubuntu Mono", "Liberation Mono",
+    "Courier New", Courier, monospace;
   --cupcake-background: #fefefe;
   --cupcake-text: #212121;
   --cupcake-primary: #07c;
   --cupcake-secondary: #30c;
   --cupcake-muted: #f6f6f6;
-  --cupcake-highlight: #EFEFFE;
+  --cupcake-highlight: #efeffe;
   --cupcake-gray: #ccc;
   --cupcake-accent: #3cf;
   --cupcake-darken: #fff;
@@ -37,6 +39,7 @@ html {
 }
 
 body {
+  /*TODO refactor styles*/
   font-size: 16px;
   line-height: 1.5;
   color: var(--cupcake-text);
@@ -54,7 +57,7 @@ body > header {
   border-bottom: 1px solid var(--cupcake-muted);
 }
 
-body > header >:first-child,
+body > header > :first-child,
 body > header > h1 {
   margin-top: 0;
 }
@@ -101,12 +104,20 @@ h6 {
   font-size: 14px;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   line-height: 1.25;
-  letter-spacing: -.25px;
+  letter-spacing: -0.25px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -151,7 +162,7 @@ img {
 }
 
 blockquote {
-  border-left: .25rem solid var(--cupcake-primary);
+  border-left: 0.25rem solid var(--cupcake-primary);
   margin-left: 0;
   padding: 1rem 2rem;
   margin: 1rem 0;
@@ -171,7 +182,7 @@ label {
 
 label + label,
 input + label {
-  margin-top: .75rem;
+  margin-top: 0.75rem;
 }
 
 label + input {
@@ -186,7 +197,7 @@ input {
   border: 1px solid var(--cupcake-gray);
   box-shadow: none;
   display: block;
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   width: 100%;
 }
 
@@ -240,14 +251,17 @@ legend {
 }
 
 caption {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 
 table {
   width: 100%;
 }
 
-table, td, th, tr {
+table,
+td,
+th,
+tr {
   border: 1px solid var(--cupcake-gray);
   border-collapse: collapse;
 }
@@ -256,12 +270,12 @@ th {
   background-color: var(--cupcake-muted);
 }
 
-th, td {
+th,
+td {
   padding: 0.5rem;
 }
 
 dl {
-
 }
 
 dl + dl {
