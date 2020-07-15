@@ -7,15 +7,15 @@
     "Courier New", Courier, monospace;
   --cupcake-background: #fefefe;
   --cupcake-text: #212121;
-  --cupcake-primary: #07c;
-  --cupcake-secondary: #30c;
-  --cupcake-muted: #f6f6f6;
+  --cupcake-primary: #00f;
+  --cupcake-secondary: #00c;
+  --cupcake-muted: #f4f4f4;
   --cupcake-highlight: #efeffe;
   --cupcake-gray: #ccc;
   --cupcake-accent: #3cf;
-  --cupcake-darken: #fff;
+  --cupcake-darken: #333;
 }
-
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --cupcake-background: #111;
@@ -29,59 +29,93 @@
     --cupcake-darken: #111;
   }
 }
+*/
+
+body > header h1 {
+  margin: 0;
+}
 
 * {
   box-sizing: border-box;
-}
-
-html {
-  background-color: var(--cupcake-background);
+  transition: 0.125s all ease-in-out;
 }
 
 body {
-  /*TODO refactor styles*/
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
-  line-height: 1.5;
-  color: var(--cupcake-text);
-  font-family: var(--cupcake-sans);
-  margin: 0 auto;
-  max-width: 768px;
-  padding: 2rem;
-  overflow-x: hidden;
-  word-break: break-word;
-  overflow-wrap: break-word;
+  margin: 0;
+  line-height: 1.75;
 }
 
+a {
+  text-decoration: none;
+  color: var(--cupcake-primary);
+}
+
+a:hover {
+  color: var(--cupcake-secondary);
+}
+
+/* Layout */
 body > header {
-  padding: 0 0 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--cupcake-muted);
+  position: sticky;
+  top: 0;
+  background-color: var(--cupcake-background);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
 }
 
-body > header > :first-child,
-body > header > h1 {
-  margin-top: 0;
+body > header section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
+body > header section nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
-nav ul li {
-  display: inline-block;
+body > header section nav a {
+  padding: 0.5rem;
 }
 
-audio,
-video,
-canvas,
-meter,
-progress,
-iframe {
-  width: 100%;
+body > header > section > a {
+  color: var(--cupcake-text);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+body > header > section > a:hover {
+}
+
+header section,
+main,
+footer section {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+  margin: 2rem 0;
+  line-height: 1.3;
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 h2 {
@@ -93,201 +127,91 @@ h3 {
 }
 
 h4 {
-  font-size: 22px;
+  font-size: 18px;
 }
 
 h5 {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 h6 {
   font-size: 14px;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  line-height: 1.25;
-  letter-spacing: -0.25px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-small {
-  font-size: 0.875rem;
-}
-
-meter {
-  height: 1rem;
-}
-
-meter::-webkit-meter-bar {
-  background-color: var(--cupcake-gray);
-  border: 0;
-}
-
-hr {
-  border: 0;
-  height: 1px;
-  margin: 1.5rem 0;
-  background-color: var(--cupcake-highlight);
-}
-
-a {
-  color: var(--cupcake-primary);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--cupcake-secondary);
-  text-decoration: underline;
-}
-
-img {
-  max-width: 100%;
-  display: inline-block;
-}
-
 blockquote {
-  border-left: 0.25rem solid var(--cupcake-primary);
-  margin-left: 0;
-  padding: 1rem 2rem;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: #fff9db;
+  border-radius: 0.25rem;
+  border: 1px solid #ffe066;
+  border-left-width: 0.5rem;
 }
 
 blockquote > :first-child {
   margin-top: 0;
 }
 
-blockquote > :last-child {
-  margin-bottom: 0;
+code {
+  background-color: var(--cupcake-muted);
+  font-family: "Courier New", Courier, monospace;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  text-align: left;
+  white-space: pre-wrap;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  font-weight: 400;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
-label {
-  display: block;
-}
-
-label + label,
-input + label {
-  margin-top: 0.75rem;
-}
-
-label + input {
-  margin-top: 0.25rem;
-}
-
-button,
-input {
-  font-family: var(--cupcake-sans);
-  font-size: 1rem;
-  background-color: var(--cupcake-background);
-  border: 1px solid var(--cupcake-gray);
-  box-shadow: none;
-  display: block;
-  padding: 0.75rem 1rem;
-  width: 100%;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
+hr {
+  margin: 2rem 0;
   border: 0;
-  width: auto;
-  display: inline-block;
-  cursor: pointer;
-}
-
-button,
-input[type="reset"],
-input[type="submit"] {
-  margin: 1rem 0;
-  cursor: pointer;
-}
-
-button[type="reset"],
-input[type="reset"] {
-  color: var(--cupcake-primary);
-  border: 1px solid var(--cupcake-primary);
-  background-color: var(--cupcake-background);
-}
-
-button,
-input[type="submit"] {
-  color: var(--cupcake-background);
-  border: 1px solid var(--cupcake-primary);
-  background-color: var(--cupcake-primary);
-}
-
-input[type="range"] {
-  padding-left: 0;
-  padding-right: 0;
-  cursor: pointer;
-}
-
-fieldset {
-  border: 1px solid var(--cupcake-gray);
-  padding: 2rem;
-}
-
-fieldset + fieldset {
-  margin-top: 2rem;
-}
-
-legend {
-  padding: 0 1rem;
-  margin-left: -1rem;
-}
-
-caption {
-  margin: 0.5rem 0;
-}
-
-table {
-  width: 100%;
-}
-
-table,
-td,
-th,
-tr {
-  border: 1px solid var(--cupcake-gray);
-  border-collapse: collapse;
-}
-
-th {
+  height: 1px;
   background-color: var(--cupcake-muted);
 }
 
-th,
-td {
-  padding: 0.5rem;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
 }
 
-dl {
+table th,
+table td {
+  text-align: left;
+  padding: 0.75rem 0.75rem 0.75rem 0;
+  border-bottom: 1px solid var(--cupcake-muted);
 }
 
-dl + dl {
+details + details {
   margin-top: 1rem;
 }
 
-dt {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+details {
+  border: 1px solid var(--cupcake-muted);
 }
 
-dd::before {
-  content: "➜";
-  margin-right: 0.5rem;
+details:hover {
+  border-color: var(--cupcake-gray);
+}
+
+details[open] summary {
+  border-bottom: 0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 1rem;
+  outline: none;
+}
+details p {
+  padding: 0 1rem;
 }
