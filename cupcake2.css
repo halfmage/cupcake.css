@@ -1,0 +1,139 @@
+/* charset basic */
+@charset "UTF-8";
+
+/* importing inter from google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;&display=swap");
+
+/* The cupcake.css variables */
+:root {
+  --cupcake-primary: #141316;
+  --cupcake-primary-alt: #424279;
+  --cupcake-secondary: #d42222;
+  --cupcake-background: #ffffff;
+  --cupcake-text: #242424;
+  --cupcake-light: #f8f8f8;
+  --cupcake-anchor: #d42222;
+  --cupcake-family: "Inter", sans-serif;
+  --cupcake-strong: 500;
+  --cupcake-h1: 4rem;
+  --cupcake-h2: 2rem;
+  --cupcake-h3: 1.5rem;
+  --cupcake-h4: 1.125rem;
+  --cupcake-text: 1rem;
+  --cupcake-radius: 8px;
+  --cupcake-padding: 0.5rem;
+  --cupcake-border: 1px solid var(--cupcake-primary);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--cupcake-strong);
+  line-height: 1;
+}
+
+h1 {
+  font-size: var(--cupcake-h1);
+  font-size: clamp(2rem, 7vw, var(--cupcake-h1));
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: var(--cupcake-h2);
+  font-size: clamp(2rem, 4vw, var(--cupcake-h2));
+}
+
+h3 {
+  font-size: var(--cupcake-h3);
+}
+
+h4 {
+  font-size: var(--cupcake-h4);
+}
+
+p,
+li {
+  font-size: var(--cupcake-text);
+}
+
+strong {
+  font-weight: var(--cupcake-strong);
+}
+
+a {
+  color: var(--cupcake-anchor);
+  font-size: var(--cupcake-text);
+}
+
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  line-height: 1.5;
+  padding: 1.5rem;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+  background-color: var(--cupcake-background);
+  color: var(--cupcake-text);
+  font-family: var(--cupcake-family);
+}
+
+p + h1,
+p + h2,
+p + h3,
+p + h4 {
+  margin-top: 3rem;
+}
+
+header {
+}
+
+header h1 {
+  line-height: 1;
+  font-size: var(--cupcake-h4);
+}
+
+header nav a {
+  padding: calc(var(--cupcake-padding) / 2);
+}
+
+main,
+header section,
+footer section {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  background: var(--cupcake-light);
+  border-radius: var(--cupcake-radius);
+  padding: calc(var(--cupcake-padding) * 2);
+  font-size: 1rem;
+}
+
+blockquote {
+  margin-left: 0;
+  padding: calc(var(--cupcake-padding) * 4);
+  background: var(--cupcake-light);
+  border-left: 4px solid var(--cupcake-primary);
+}
+
+blockquote :first-child {
+  margin-top: 0;
+}
+
+blockquote :last-child {
+  margin-bottom: 0;
+}
