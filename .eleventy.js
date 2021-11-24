@@ -1,5 +1,12 @@
 module.exports = function(eleventyConfig) {
+
+  // watch target for quick previews
   eleventyConfig.addWatchTarget("./*.css");
+
+  // export core cupcake.css
   eleventyConfig.addPassthroughCopy({"./cupcake.css" : "cupcake.css"});
-  eleventyConfig.addPassthroughCopy({"./cupcake-light.css" : "cupcake-light.css"});
+
+  // export for flavors
+  eleventyConfig.addPassthroughCopy({"./cupcake-brownie.css" : "cupcake-brownie.css"});
+  
 };
