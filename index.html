@@ -14,6 +14,7 @@
         <a href="/">Home</a>
         <a href="/components">Components</a>
         <a href="/examples">Examples</a>
+        <a href="/variables">Variables</a>
     </nav>
   </header>
 
@@ -24,15 +25,32 @@
   </section>
 
   <main>
+    <h2>What is it?</h2>
+
+    <p>Cupcake.css is a classless CSS framework (<strong>~6 KB</strong>) to sweeten up your html pages and gives you the possibility to create stylish websites by writing HTML code only. The magic comes from a single CSS file which apply styles to all common (and some rare) web elements: sorted, categorizes and themeable! Therefore you can focus on writing your content and worry less about frameworks, libraries and design systems. The idea behind cupcake.css is to support humans that like to work in an dependency free enviroment, for example with basic HTML and CSS.</p>
+
+    <hr>
+
+    <h2>Basic page structure</h2>
+
+    <p>You can use any HTML page structure you would like but cupcake css works the best if you will keep a few simple points into mind. After the opening <code>&#x3C;body&#x3E;</code> tag you have a couple of choices. The first header element will stretch over the entire website and is the place to put your website title and your website navigation elements. After that you can create a cool hero component by using a <code>&#x3C;section&#x3E;</code> block directly after the header. Follwing this it's best to put your website content into the <code>&#x3C;main&#x3E;</code> element, because this will give you some options if the content should be wrapped or stretch over the whole screen like the header.</p>
+
+    <pre>
+&#x3C;html&#x3E;
+    &#x3C;head&#x3E;
+        &#x3C;link rel="stylesheet" href="cupcake.css"&#x3E;
+    &#x3C;/head&#x3E;
+    &#x3C;body&#x3E;
+        &#x3C;header&#x3E;cupcake.css website&#x3C;/header&#x3E;
+        &#x3C;section&#x3E;Hero Component&#x3C;/section&#x3E;
+        &#x3C;main&#x3E;
+            Your main content goes here...
+        &#x3C;/main&#x3E;
+    &#x3C;/body&#x3E;
+&#x3C;/html&#x3E;</pre>
+
 
   </main>
-
-  <p>Cupcake.css is a classless CSS framework to sweeten up your html pages and gives you the possibility to create stylish websites by writing HTML code only. The magic comes from a single CSS file which apply styles to all common (and some rare) web elements: sorted, categorizes and themeable! Therefore you can focus on writing your content and worry less about frameworks, libraries and design systems. The idea behind cupcake.css is to support humans that like to work in an dependency free enviroment, for example with basic HTML and CSS.</p>
-  <h2>Heading 2</h2>
-  <p>This is paragraph text. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
-  <br>
-  <hr>
   <br>
 
   <p>
@@ -78,16 +96,7 @@
       <cite>Edward Snowden</cite>
   </blockquote>
 
-  <pre>
-&#x3C;!DOCTYPE html&#x3E;
-&#x3C;html&#x3E;
-  &#x3C;head&#x3E;
-  &#x3C;title&#x3E;Hello World&#x3C;/title&#x3E;
-  &#x3C;/head&#x3E;
-  &#x3C;body&#x3E;
-  &#x3C;p&#x3E;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#x3C;/p&#x3E;
-  &#x3C;/body&#x3E;
-&#x3C;/html&#x3E;</pre>
+
 
   <br>
   <hr>

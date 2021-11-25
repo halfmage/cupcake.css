@@ -46,7 +46,13 @@
   --table-border:             1px solid var(--soft);
   --table-row-border:         1px solid var(--soft);
   --table-col-border:         1px solid var(--soft);
-  --table-zebra-background:   var(--background)
+  --table-zebra-background:   var(--background);
+
+  /* Hero variables */
+  --hero-text-align:          left;
+  --hero-border-bottom:       1px solid var(--muted);
+  --hero-y-padding:           4rem;
+  --hero-background:          var(--soft);
 }
 
 /*
@@ -70,6 +76,12 @@
   /* Set background color for selected text */
   background: var(--primary);
   color: var(--soft);
+}
+
+html {
+  /* Prevents page jumps when there is no scrollbar,see reference:
+  https://css-tricks.com/elegant-fix-jumping-scrollbar-issue */
+  margin-left: calc(100vw - 100%);
 }
 
 body {
@@ -113,9 +125,12 @@ nav a + a {
 
 /* Hero component */
 header + section:first-of-type {
-  text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  text-align: var(--hero-text-align);
+  border-bottom: var(--hero-border-bottom);
+  margin: 0 calc(0px - (50vw - 50%)) 2rem;  
+  padding: var(--hero-y-padding) calc(50vw - 50%);
+  background: var(--hero-background);
+  margin-top: -2rem;
 }
 
 header + section:first-of-type > *:first-child {
@@ -180,7 +195,25 @@ mark {
   color: var(--background)
 }
 
-blockquote, pre {
+code {
+  background: var(--soft);
+  padding: .25rem;
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+pre {
+  background: var(--soft);
+  margin-left: 0;
+  margin-right: 0;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+blockquote {
   background: var(--soft);
   margin-left: 0;
   margin-right: 0;
