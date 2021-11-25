@@ -22,45 +22,79 @@
 :root {
 
   /* Color variables */
-  --background:   #F8FAFC;
-  --soft:         #E2E8F0;
-  --muted:        #CBD5E1;
-  --text:         #1E293B;
-  --primary:      #1E293B;
-  --secondary:    pink;
+  --background:             #FAFAFA;
+
+  --grayscale-1:            #F5F5F5;
+  --grayscale-2:            #E5E5E5;
+  --grayscale-3:            #D4D4D4;
+  --grayscale-4:            #737373;
+  --grayscale-5:            #525252;
+  --grayscale-6:            #404040;
+
+  --text:                   #262626;
+
+  --primary:                #E11D48;
 
   /* Typography variables */
-  --font-sans:        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font-serif:       Georgia, 'Times New Roman', Times, serif;
+  --font-sans:                -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-serif:               Georgia, 'Times New Roman', Times, serif;
+  --font-mono:                'Courier New', Courier, monospace;
 
   /* Base text variables */
-  --text-headlines:   var(--font-sans);
-  --text-body:        var(--font-sans);
+  --text-headlines:           var(--font-sans);
+  --headline-weight:          700;
 
-  --headline-font-weight: 700;
-  --list-symbol: "➔";
+  --text-body:                var(--font-sans);
+  --text-weight:              400;
 
-  --border-radius: 4px;
+  /* Layout options */
+  --body-wrap:                100%;
+  --body-wrap-padding:        0 calc(50vw - 50%);
+
+  /* Definition list variables */
+  --list-symbol:              "➔";
+
+  /* General style variables */
+  --border-radius:            4px;
+  --box-shadow:               0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);;
 
   /* Table variables */
-  --table-border:             1px solid var(--soft);
-  --table-row-border:         1px solid var(--soft);
-  --table-col-border:         1px solid var(--soft);
+  --table-border:             1px solid var(--grayscale-2);
+  --table-row-border:         1px solid var(--grayscale-2);
+  --table-col-border:         1px solid var(--grayscale-2);
   --table-zebra-background:   var(--background);
 
+  /* Header variables */
+  --header-alignment:         left;
+  --header-background:        var(--background);
+  --header-border-bottom:     1px solid var(--grayscale-2);
+  --header-box-shadow:        0;
+  
+  --header-wrap-margin:       0 calc(0px - (50vw - 50%)) 2rem;  
+  --header-wrap-padding:      1rem calc(50vw - 50%);
+
   /* Hero variables */
-  --hero-text-align:          left;
-  --hero-border-bottom:       1px solid var(--muted);
+  --hero-alignment:           left;
+  --hero-border-bottom:       1px solid var(--grayscale-2);
   --hero-y-padding:           4rem;
-  --hero-background:          var(--soft);
+  --hero-background:          transparent;
+
+  /* Button variables */
+  --button-background:        var(--primary);
+  --button-border:            1px solid var(--primary);
+  --button-radius:            var(--border-radius);
+  --button-color:             var(--background);
+  --button-padding:           1.5rem 1rem;
+  --button-text-transform:    normal;
+  --button-font-weight:       var(--text-weight);
 }
 
 /*
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0F172A;
-    --soft: #1E293B;
-    --muted: #64748B;
+    --grayscale-2: #1E293B;
+    --grayscale-3: #64748B;
     --text: #F8FAFC;
     --primary: #F59E0B;
     --secondary: pink;
@@ -75,27 +109,23 @@
 ::selection {
   /* Set background color for selected text */
   background: var(--primary);
-  color: var(--soft);
+  color: var(--grayscale-2);
 }
 
 html {
-  /* Prevents page jumps when there is no scrollbar,see reference:
-  https://css-tricks.com/elegant-fix-jumping-scrollbar-issue */
-  margin-left: calc(100vw - 100%);
 }
 
 body {
-    max-width: 64rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin: 0 auto;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-family: var(--text-body);
-    color: var(--text);
-    background-color: var(--background);
-    accent-color: var(--primary);
-    overflow-x: hidden;
+  max-width: var(--body-wrap);
+  padding: var(--body-wrap-padding);
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: var(--text-body);
+  color: var(--text);
+  background-color: var(--background);
+  accent-color: var(--primary);
+  overflow-x: hidden;
 }
 
 img {
@@ -104,9 +134,12 @@ img {
 }
 
 header {
-  border-bottom: 1px solid var(--muted);
-  margin: 0 calc(0px - (50vw - 50%)) 2rem;  
-  padding: 1rem calc(50vw - 50%);
+  margin: var(--header-wrap-margin);
+  padding: var(--header-wrap-padding);
+  box-shadow: var(--header-box-shadow);
+  background: var(--header-background);
+  border-bottom: var(--header-border-bottom);
+  text-align: var(--header-alignment);
 }
 
 header > h1 {
@@ -125,7 +158,7 @@ nav a + a {
 
 /* Hero component */
 header + section:first-of-type {
-  text-align: var(--hero-text-align);
+  text-align: var(--hero-alignment);
   border-bottom: var(--hero-border-bottom);
   margin: 0 calc(0px - (50vw - 50%)) 2rem;  
   padding: var(--hero-y-padding) calc(50vw - 50%);
@@ -143,16 +176,25 @@ header + section:first-of-type > *:last-child {
 /* TYPOGRAPHY */
 
 /* Headline sizes */
-h1 { font-size: 4rem;     line-height: 1.3; }
-h2 { font-size: 2.25rem;  line-height: 2.5rem; }
-h3 { font-size: 1.875rem; line-height: 2.25rem; }
-h4 { font-size: 1.5rem;   line-height: 2rem; }
-h5 { font-size: 1.25rem;  line-height: 1.75rem; }
-h6 { font-size: 1.125rem; line-height: 1.75rem; }
+h1 { font-size: 2.25rem;    line-height: 2.5rem; }
+h2 { font-size: 1.875rem;   line-height: 2.25rem; }
+h3 { font-size: 1.5rem;     line-height: 2rem; }
+h4 { font-size: 1.25rem;    line-height: 1.75rem; }
+h5 { font-size: 1.125rem;   line-height: 1.75rem; }
+h6 { font-size: 1rem;       line-height: 1.5rem; }
+
+@media screen and (min-width:640px) {
+  h1 { font-size: 3.5rem;   line-height: 1.3; }
+  h2 { font-size: 2.25rem;  line-height: 2.5rem; }
+  h3 { font-size: 1.875rem; line-height: 2.25rem; }
+  h4 { font-size: 1.5rem;   line-height: 2rem; }
+  h5 { font-size: 1.25rem;  line-height: 1.75rem; }
+  h6 { font-size: 1.125rem; line-height: 1.75rem; }
+}
 
 h1,h2,h3,h4,h5,h6 {
   font-family: var(--text-headlines);
-  font-weight: var(--headline-font-weight);
+  font-weight: var(--headline-weight);
   margin-bottom: 0;
 }
 
@@ -180,8 +222,8 @@ abbr {
 }
 
 abbr:hover {
-  background: var(--soft);
-  box-shadow: 0 0 0 .25rem var(--soft);
+  background: var(--grayscale-2);
+  box-shadow: 0 0 0 .25rem var(--grayscale-2);
   border-radius: var(--border-radius);
 }
 
@@ -191,7 +233,7 @@ mark {
 }
 
 code {
-  background: var(--soft);
+  background: var(--grayscale-2);
   padding: .25rem;
   border-radius: var(--border-radius);
   font-size: 0.875rem;
@@ -199,22 +241,24 @@ code {
 }
 
 pre {
-  background: var(--soft);
+  background: var(--grayscale-2);
   margin-left: 0;
   margin-right: 0;
   padding: 1rem;
   border-radius: var(--border-radius);
   font-size: 0.875rem;
   line-height: 1.25rem;
+  box-shadow: var(--box-shadow);
 }
 
 blockquote {
-  background: var(--soft);
+  background: var(--grayscale-2);
   margin-left: 0;
   margin-right: 0;
   padding: 1rem;
-  border-left: 4px solid var(--muted);
+  border-left: 4px solid var(--grayscale-3);
   border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
 }
 
 blockquote cite:before {
@@ -230,7 +274,7 @@ blockquote cite {
 kbd {
   display: inline-block;
   padding: .125rem .5rem;
-  border: 1px solid var(--muted);
+  border: 1px solid var(--grayscale-3);
   border-bottom-width: 4px;
   border-radius: var(--border-radius);
   font-weight: 700;
@@ -256,14 +300,14 @@ input[type="password"],
 select,
 textarea {
   background: var(--background);
-  border: 1px solid var(--muted);
+  border: 1px solid var(--grayscale-3);
   border-radius: var(--border-radius);
   color: var(--text);
   padding: .5rem;
   font-size: 1rem;
   line-height: 1.5rem;
   max-width: 100%;
-  box-shadow: none;
+  box-shadow: var(--box-shadow);
 }
 
 input[type="text"]:focus,
@@ -292,21 +336,23 @@ th, td {
 }
 
 hr {
-  background-color: var(--soft);
+  background-color: var(--grayscale-2);
   height: 1px;
   border: none;
   margin: 2rem 0;
 }
 
 button {
-  background: var(--primary);
-  border: 1px solid var(--primary);
+  background: var(--button-background);
+  border: var(--button-border);
   border-radius: var(--border-radius);
-  color: var(--text);
+  color: var(--button-color);
+  font-weight: var(--button-font-weight);
+  padding: var(--button-padding);
+  text-transform: var(--button-text-transform);
   padding: .5rem .75rem;
   font-size: 1rem;
   line-height: 1.5rem;
-  font-weight: 400;
   cursor: pointer;
 }
 
