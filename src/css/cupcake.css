@@ -143,22 +143,22 @@ header + section:first-of-type > *:last-child {
 /* TYPOGRAPHY */
 
 /* Headline sizes */
-h1 { font-size: 4rem;
-  line-height: 1.3; }
-h2 { font-size: 2.25rem;
-  line-height: 2.5rem; }
-h3 { font-size: 1.875rem;
-  line-height: 2.25rem; }
-h4 { font-size: 1.5rem;
-  line-height: 2rem; }
-h5 { font-size: 1.25rem;
-  line-height: 1.75rem; }
-h6 { font-size: 1.125rem;
-  line-height: 1.75rem; }
+h1 { font-size: 4rem;     line-height: 1.3; }
+h2 { font-size: 2.25rem;  line-height: 2.5rem; }
+h3 { font-size: 1.875rem; line-height: 2.25rem; }
+h4 { font-size: 1.5rem;   line-height: 2rem; }
+h5 { font-size: 1.25rem;  line-height: 1.75rem; }
+h6 { font-size: 1.125rem; line-height: 1.75rem; }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: var(--text-headlines);
   font-weight: var(--headline-font-weight);
+  margin-bottom: 0;
+}
+
+/* Reduce distance when anything follows a headline  */
+h1 + *, h2 + *, h3 + *, h4 + *, h5 + *, h6 + * {
+  margin-top: 1rem;
 }
 
 small {
@@ -169,11 +169,6 @@ small {
 caption {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-/* Reduce distance from headline and following paragraph */
-h1+p,h2+p,h3+p,h4+p,h5+p,h6+p {
-  margin-top: 1rem;
 }
 
 a {
@@ -300,6 +295,7 @@ hr {
   background-color: var(--soft);
   height: 1px;
   border: none;
+  margin: 2rem 0;
 }
 
 button {
