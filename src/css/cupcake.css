@@ -48,7 +48,7 @@
   --text-weight:              400;
 
   /* Layout options */
-  --body-wrap:                100%;
+  --body-wrap:                48em;
   --body-wrap-padding:        0 calc(50vw - 50%);
 
   /* Definition list variables */
@@ -234,20 +234,34 @@ mark {
 
 code {
   background: var(--grayscale-2);
-  padding: .25rem;
+  padding: .125rem;
   border-radius: var(--border-radius);
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
+pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+pre[data-lang]::before {
+  content: attr(data-lang);
+  display: block;
+  background: var(--primary);
+}
+
 pre {
-  background: var(--grayscale-2);
-  margin-left: 0;
-  margin-right: 0;
-  padding: 1rem;
-  border-radius: var(--border-radius);
   font-size: 0.875rem;
   line-height: 1.25rem;
+  tab-size: 2;
+  overflow-x: auto;
+  background: var(--text);
+  color: var(--grayscale-1);
+  margin: 0;
+  padding: 1rem;
+  border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 }
 
