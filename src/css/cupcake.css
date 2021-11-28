@@ -378,3 +378,37 @@ button[type="reset"] {
   background: var(--background);
   color: var(--primary);
 }
+
+details > summary { 
+  cursor: pointer;
+  background-color: var(--grayscale-2);
+  cursor: pointer;
+  padding: .75rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+details[open] > summary {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+details > div {
+  border: 2px solid var(--grayscale-2);
+  margin-top: 0;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+details > div > * {
+  margin: 0;
+}
+
+details > summary > * { 
+  display: inline;
+}
+
+details + details {
+  margin-top: 1rem;
+}
