@@ -48,7 +48,7 @@
   --text-weight:              400;
 
   /* Layout options */
-  --body-wrap:                48em;
+  --body-wrap:                64em;
   --body-wrap-padding:        0 calc(50vw - 50%);
 
   /* Definition list variables */
@@ -87,6 +87,10 @@
   --button-padding:           1.5rem 1rem;
   --button-text-transform:    normal;
   --button-font-weight:       var(--text-weight);
+
+  /* Code variables */
+  --code-background:          var(--text);
+  --code-color:               var(--grayscale-1);
 }
 
 /*
@@ -233,36 +237,32 @@ mark {
 }
 
 code {
-  background: var(--grayscale-2);
+  background: var(--text);
+  color: var(--grayscale-1);
   padding: .125rem;
   border-radius: var(--border-radius);
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-pre code {
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-}
-
-pre[data-lang]::before {
-  content: attr(data-lang);
-  display: block;
-  background: var(--primary);
-}
-
 pre {
   font-size: 0.875rem;
   line-height: 1.25rem;
   tab-size: 2;
+  white-space: pre;
   overflow-x: auto;
-  background: var(--text);
-  color: var(--grayscale-1);
+  background: var(--code-background);
+  color: var(--code-color);
   margin: 0;
   padding: 1rem;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+}
+
+pre code {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 blockquote {
