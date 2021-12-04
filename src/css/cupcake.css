@@ -22,18 +22,18 @@
 :root {
 
   /* Color variables */
-  --background:             #FAFAFA;
+  --background:             #F8FAFC;
 
-  --grayscale-1:            #F5F5F5;
-  --grayscale-2:            #E5E5E5;
-  --grayscale-3:            #D4D4D4;
-  --grayscale-4:            #737373;
-  --grayscale-5:            #525252;
-  --grayscale-6:            #404040;
+  --grayscale-1:            #F1F5F9;
+  --grayscale-2:            #E2E8F0;
+  --grayscale-3:            #CBD5E1;
+  --grayscale-4:            #94A3B8;
+  --grayscale-5:            #64748B;
+  --grayscale-6:            #475569;
 
-  --text:                   #262626;
+  --text:                   #1E293B;
 
-  --primary:                #E11D48;
+  --primary:                #2563EB;
 
   /* Typography variables */
   --font-sans:                -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -70,7 +70,7 @@
   --header-border-bottom:     1px solid var(--grayscale-2);
   --header-box-shadow:        0;
   
-  --header-wrap-margin:       0 calc(0px - (50vw - 50%)) 2rem;  
+  --header-wrap-margin:       0 calc(0px - (50vw - 50%)) 2rem;
   --header-wrap-padding:      1rem calc(50vw - 50%);
 
   /* Hero variables */
@@ -86,7 +86,7 @@
   --button-color:             var(--background);
   --button-padding:           1.5rem 1rem;
   --button-text-transform:    normal;
-  --button-font-weight:       var(--text-weight);
+  --button-font-weight:       var(--headline-weight);
 
   /* Code variables */
   --code-background:          var(--text);
