@@ -274,6 +274,8 @@ blockquote {
   margin-left: 0;
   margin-right: 0;
   padding: 1rem;
+  font-size: 1.25rem;
+  line-height: 2rem;
   border-left: 4px solid var(--grayscale-3);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
@@ -287,6 +289,7 @@ blockquote cite:before {
 blockquote cite {
   display: block;
   margin-top: 1rem;
+  font-size: 1rem;
 }
 
 kbd {
@@ -319,7 +322,6 @@ dl dd:before {
   content: var(--list-symbol);
   margin-right: .25rem;
 }
-
 
 label {
   display: block;
@@ -403,15 +405,32 @@ button[type="reset"] {
 
 details > summary { 
   cursor: pointer;
-  background-color: var(--grayscale-2);
+  border: 2px solid var(--grayscale-2);
   cursor: pointer;
   padding: .75rem 1rem;
   border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+}
+
+details > summary:before {
+  content: "+";
+  width: 24px;
+  height: 24px;
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+details[open] > summary:before {
+  content: "-";
 }
 
 details[open] > summary {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  border-bottom-width: 0;
 }
 
 details > div {
