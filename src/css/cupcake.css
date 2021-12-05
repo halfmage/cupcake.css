@@ -299,10 +299,27 @@ kbd {
   font-weight: 700;
 }
 
-dd:before {
+dl {
+
+}
+
+dl dt {
+  font-weight: bold;
+}
+
+dl dd + dt {
+  margin-top: 1rem;
+}
+
+dl dd {
+  margin-left: 1.25rem;
+}
+
+dl dd:before {
   content: var(--list-symbol);
   margin-right: .25rem;
 }
+
 
 label {
   display: block;
