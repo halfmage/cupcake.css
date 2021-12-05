@@ -54,6 +54,12 @@
   /* Definition list variables */
   --list-symbol:              "➔";
 
+  /* Details variables */
+  --details-background:       var(--background);
+  --details-border:           2px solid var(--grayscale-2);
+  --details-padding:          .75rem 1rem;
+  --details-border-radius:    var(--border-radius)
+
   /* General style variables */
   --border-radius:            4px;
   --box-shadow:               0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);;
@@ -300,6 +306,7 @@ kbd {
   font-size: 0.875rem;
   border-radius: var(--border-radius);
   font-weight: 700;
+  white-space: nowrap;
 }
 
 dl {
@@ -405,26 +412,21 @@ button[type="reset"] {
 
 details > summary { 
   cursor: pointer;
-  border: 2px solid var(--grayscale-2);
-  cursor: pointer;
-  padding: .75rem 1rem;
-  border-radius: var(--border-radius);
+  border: var(--details-border);
+  padding: var(--details-padding);
+  border-radius: var(--details-border-radius);
   display: flex;
   align-items: center;
 }
 
-details > summary:before {
-  content: "+";
-  width: 24px;
-  height: 24px;
-  display: block;
-  text-align: center;
-  font-size: 2rem;
-  line-height: 1;
+details > summary:after {
+  content: "↓";
+  font-size: 1.5rem;
+  margin-left: auto;
 }
 
-details[open] > summary:before {
-  content: "-";
+details[open] > summary:after {
+  content: "↑";
 }
 
 details[open] > summary {
@@ -442,12 +444,19 @@ details > div {
   border-top-right-radius: 0;
 }
 
-details > div > * {
-  margin: 0;
-}
-
 details > summary > * { 
   display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+details > summary > * + * {
+  margin-left: 1rem;
+}
+
+details > div > * {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 details + details {
