@@ -53,7 +53,67 @@ layout: default
   <dt>Chocolate Covered Strawberry Cupcakes</dt>
   <dd>This cupcake is the captivating cousin of the ever-luscious chocolate covered strawberry. Whip up a batch for Valentine’s Day and watch the admirers flock your way!</dd>
 </dl>
-´
+
+<hr>
+
+<h2>Forms</h2>
+
+<p>This is a cool example for a job application form which has most of the commonly used HTML form elements.</p>
+
+<form action="/">
+    <label>Name *</label>
+    <input type="text" name="name" placeholder="First name" required/>
+    <input type="text" name="name" placeholder="Last name" required/>
+
+    <label>Email *<small>Some helper text</small></label>
+    <input type="text" name="name" required/>
+
+    <label>Phone *</label>
+    <input type="text" name="name" required/>
+
+    <label>What position are you applying for? *</label>
+    <select required>
+      <option value="1">Job 1</option>
+      <option value="2">Job 2</option>
+      <option value="3">Job 3</option>
+      <option value="4">Job 4</option>
+      <option value="5">Job 5</option>
+    </select>
+
+    <label>Available start date *</label>
+    <input type="date" name="bdate" required/>
+
+    <label>What is your current employment status? *</label>
+
+    <input type="radio" value="none" id="radio_1" name="status" required/>
+    <label for="radio_1">Employed</label>
+    <br>
+    <input type="radio" value="none" id="radio_2" name="status" required/>
+    <label for="radio_2">Self-Employed</label>
+    <br>
+    <input type="radio" value="none" id="radio_3" name="status" required/>
+    <label for="radio_3">Unemployed</label>
+    <br>
+    <input type="radio" value="none" id="radio_4" name="status" required/>
+    <label for="radio_4">Student</label>
+
+    <label>What do you prefere most about cupcake.css? *</label>
+
+    <input type="checkbox" value="none" id="checkbox_1" name="status" required/>
+    <label for="checkbox_1">No need of classes</label>
+    <input type="checkbox" value="none" id="checkbox_2" name="status" required/>
+    <label for="checkbox_2">Focus on writing html content</label>
+    <input type="checkbox" value="none" id="checkbox_3" name="status" required/>
+    <label for="checkbox_3">The many different flavors</label>
+
+    <p>Submit your resume by providing your resume URL or attach file:</p>
+    <input type="file" name="file" accept="file/*">
+
+    <button type="button" href="/">Apply For The Job</button>
+    <button type="submit" disabled href="/">Apply For The Job</button>
+    <button type="reset" href="/">Reset</button>
+</form>
+
 <hr>
 
 <h2>Blockquotes</h2>
