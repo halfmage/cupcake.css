@@ -200,6 +200,7 @@ h1,h2,h3,h4,h5,h6 {
   font-family: var(--text-headlines);
   font-weight: var(--headline-weight);
   margin-bottom: 0;
+  margin-top: 2rem;
 }
 
 /* Reduce distance when anything follows a headline  */
@@ -223,12 +224,11 @@ a {
 
 abbr {
   cursor: help;
+  border-bottom: 1px dotted var(--grayscale-5);
 }
 
 abbr:hover {
-  background: var(--grayscale-2);
-  box-shadow: 0 0 0 .25rem var(--grayscale-2);
-  border-radius: var(--border-radius);
+  border-bottom-color: var(--primary);
 }
 
 mark {
@@ -243,6 +243,10 @@ code {
   border-radius: var(--border-radius);
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+code span {
+  color: var(--grayscale-4);
 }
 
 pre {
@@ -286,10 +290,11 @@ blockquote cite {
 }
 
 kbd {
-  display: inline-block;
+  display: inline;
   padding: .125rem .5rem;
   border: 1px solid var(--grayscale-3);
-  border-bottom-width: 4px;
+  border-bottom-width: 3px;
+  font-size: 0.875rem;
   border-radius: var(--border-radius);
   font-weight: 700;
 }
