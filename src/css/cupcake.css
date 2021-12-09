@@ -30,7 +30,8 @@
   --grayscale-5:            #64748B;
   --grayscale-6:            #475569;
   --text:                   #1E293B;
-  --primary:                #2563EB;
+  --primary:                #14B8A6;
+  --accent:                 #F97316;
 
   /* Typography variables */
   --font-sans:                -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -107,7 +108,6 @@
   --grayscale-5:            #9CA3AF;
   --grayscale-6:            #E5E7EB;
   --text:                   #E5E7EB;
-  --primary:                #2563EB;
   }
 }
 
@@ -284,11 +284,10 @@ blockquote {
   margin-left: 0;
   margin-right: 0;
   padding: 1rem;
-  font-size: 1.25rem;
-  line-height: 2rem;
   border-left: 4px solid var(--grayscale-3);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  vertical-align: middle;
 }
 
 blockquote cite:before {
@@ -370,6 +369,7 @@ button {
   font-size: 1rem;
   line-height: 1.5rem;
   cursor: pointer;
+  margin-top: 1rem;
 }
 
 button:hover {
@@ -450,17 +450,20 @@ label small {
   margin-left: auto;
 }
 
+/* Margin top for everything that follows an label */
 label + input,
 label + select,
 label + textarea {
   margin-top: 0.25rem;
 }
 
+/* Make labels next to radio, checkbox inline-block */
 input[type="radio"] + label,
 input[type="checkbox"] + label {
   display: inline-block;
 }
 
+/* Margin between labels after an input */
 label + label,
 input:not(input[type="checkbox"]) + label,
 input:not(input[type="radio"]) + label,
@@ -469,6 +472,7 @@ textarea + label {
   margin-top: 1rem;
 }
 
+/* Margin between form elements without labels */
 input + input,
 input + select,
 input + textarea,
@@ -489,16 +493,16 @@ input[type="date"],
 input[type="file"],
 select,
 textarea {
-  background: var(--background);
+  background: var(--grayscale-1);
   border: 1px solid var(--grayscale-3);
   border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
   color: var(--text);
   padding: .5rem;
   font-size: 1rem;
   line-height: 1.5rem;
   display: block;
   width: 100%;
-  box-shadow: var(--box-shadow);
 }
 
 input[type="text"]:focus,
