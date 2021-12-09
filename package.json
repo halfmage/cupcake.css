@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/halfmage/cupcake-css#readme",
   "scripts": {
-    "start": "npx eleventy --serve"
+    "start": "npx eleventy --serve",
+    "build": "npx eleventy"
   },
   "dependencies": {
-    "@11ty/eleventy": "^1.0.0-beta.2"
+    "@11ty/eleventy": "^1.0.0-beta.2",
+    "np": "^7.6.0"
   }
 }
