@@ -1,24 +1,25 @@
 {
   "name": "cupcake.css",
-  "version": "1.0.0",
+  "version": "0.0.9",
   "description": "A classless CSS framework to sweeten up your html pages",
   "main": "cupcake.css",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/halfmage/cupcake-css.git"
+    "url": "git+https://github.com/halfmage/cupcake.css.git"
   },
   "keywords": [
     "css"
   ],
-  "author": "halfmage",
+  "author": "Gerrit Halfmann",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/halfmage/cupcake-css/issues"
+    "url": "https://github.com/halfmage/cupcake.css/issues"
   },
-  "homepage": "https://github.com/halfmage/cupcake-css#readme",
+  "homepage": "https://github.com/halfmage/cupcake.css#readme",
   "scripts": {
     "start": "npx eleventy --serve",
-    "build": "npx eleventy && cp src/css/cupcake.css ./cupcake.css && css-minify -f cupcake.css -o /"
+    "build": "npx eleventy && cp src/css/cupcake.css ./cupcake.css && css-minify -f cupcake.css -o /",
+    "test": "echo \"Error: no test specified\""
   },
   "dependencies": {
     "@11ty/eleventy": "^1.0.0-beta.2"
