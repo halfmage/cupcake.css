@@ -51,6 +51,12 @@
   /* Definition list variables */
   --list-symbol:              "➔";
 
+  /* Details variables */
+  --details-background:       var(--background);
+  --details-border:           2px solid var(--grayscale-2);
+  --details-padding:          .75rem 1rem;
+  --details-border-radius:    var(--border-radius);
+
   /* General style variables */
   --border-radius:            4px;
   --box-shadow:               0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);;
@@ -221,6 +227,11 @@ a {
   color: var(--primary);
 }
 
+/* I keep this here for next version */
+a[href^="mailto"]::after {
+  content: " ✉️";
+}
+
 abbr {
   cursor: help;
   border-bottom: 1px dotted var(--grayscale-5);
@@ -299,6 +310,7 @@ kbd {
   font-size: 0.875rem;
   border-radius: var(--border-radius);
   font-weight: 700;
+  white-space: nowrap;
 }
 
 dl {
@@ -320,39 +332,6 @@ dl dd {
 dl dd:before {
   content: var(--list-symbol);
   margin-right: .25rem;
-}
-
-label {
-  display: block;
-}
-
-label + input {
-  margin-top: 0.5rem;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="password"],
-select,
-textarea {
-  background: var(--background);
-  border: 1px solid var(--grayscale-3);
-  border-radius: var(--border-radius);
-  color: var(--text);
-  padding: .5rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  max-width: 100%;
-  box-shadow: var(--box-shadow);
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-input[type="password"]:focus,
-textarea:focus {
-  outline-color: var(--primary);
 }
 
 table {
@@ -394,7 +373,7 @@ button {
 }
 
 button:hover {
-  opacity: .9;
+  opacity: .8;
 }
 
 button[type="reset"] {
@@ -402,28 +381,28 @@ button[type="reset"] {
   color: var(--primary);
 }
 
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 details > summary { 
   cursor: pointer;
-  border: 2px solid var(--grayscale-2);
-  cursor: pointer;
-  padding: .75rem 1rem;
-  border-radius: var(--border-radius);
+  border: var(--details-border);
+  padding: var(--details-padding);
+  border-radius: var(--details-border-radius);
   display: flex;
   align-items: center;
 }
 
-details > summary:before {
-  content: "+";
-  width: 24px;
-  height: 24px;
-  display: block;
-  text-align: center;
-  font-size: 2rem;
-  line-height: 1;
+details > summary:after {
+  content: "↓";
+  font-size: 1.5rem;
+  margin-left: auto;
 }
 
-details[open] > summary:before {
-  content: "-";
+details[open] > summary:after {
+  content: "↑";
 }
 
 details[open] > summary {
@@ -441,14 +420,93 @@ details > div {
   border-top-right-radius: 0;
 }
 
-details > div > * {
-  margin: 0;
-}
-
 details > summary > * { 
   display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+details > summary > * + * {
+  margin-left: 1rem;
+}
+
+details > div > * {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 details + details {
   margin-top: 1rem;
+}
+
+/* Forms */
+
+label {
+  display: flex;
+}
+
+label small {
+  color: var(--grayscale-5);
+  margin-left: auto;
+}
+
+label + input,
+label + select,
+label + textarea {
+  margin-top: 0.25rem;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  display: inline-block;
+}
+
+label + label,
+input:not(input[type="checkbox"]) + label,
+input:not(input[type="radio"]) + label,
+select + label,
+textarea + label {
+  margin-top: 1rem;
+}
+
+input + input,
+input + select,
+input + textarea,
+select + select,
+select + input,
+select + textarea,
+textarea + textarea,
+textarea + input,
+textarea + select {
+  margin-top: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
+  background: var(--background);
+  border: 1px solid var(--grayscale-3);
+  border-radius: var(--border-radius);
+  color: var(--text);
+  padding: .5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  display: block;
+  width: 100%;
+  box-shadow: var(--box-shadow);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="file"]:focus,
+textarea:focus {
+  outline-color: var(--primary);
 }
