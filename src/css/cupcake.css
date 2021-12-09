@@ -74,7 +74,7 @@
   --hero-alignment:           left;
   --hero-border-bottom:       1px solid var(--grayscale-2);
   --hero-y-padding:           4rem;
-  --hero-background:          transparent;
+  --hero-background:          var(--grayscale-1);
 
   /* Button variables */
   --button-background:        var(--primary);
@@ -100,7 +100,7 @@
   --grayscale-4:            #6B7280;
   --grayscale-5:            #9CA3AF;
   --grayscale-6:            #E5E7EB;
-  --text:                   #F9FAFB;
+  --text:                   #E5E7EB;
   --primary:                #2563EB;
   }
 }
@@ -236,7 +236,7 @@ mark {
 }
 
 code {
-  background: var(--code-text);
+  background: var(--code-background);
   color: var(--code-color);
   padding: .125rem;
   border-radius: var(--border-radius);
