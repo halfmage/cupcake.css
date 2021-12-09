@@ -2,7 +2,7 @@
 
 A classless CSS framework to sweeten up your html pages.
 
-[Website](linkurl) | [Variables reference](linkurl) | [Components](linkurl) | [Examples](linkurl)
+[Website](https://cupcake-css.netlify.app/) | [Variables reference](https://cupcake-css.netlify.app/variables/) | [Components](https://cupcake-css.netlify.app/components/) | [Examples](https://cupcake-css.netlify.app/examples/)
 
 ## What and why?
 
