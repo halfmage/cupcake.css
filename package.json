@@ -1,0 +1,25 @@
+{
+  "name": "cupcake.css",
+  "version": "1.0.0",
+  "description": "A classless CSS framework to sweeten up your html pages",
+  "main": "cupcake.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halfmage/cupcake-css.git"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "halfmage",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/halfmage/cupcake-css/issues"
+  },
+  "homepage": "https://github.com/halfmage/cupcake-css#readme",
+  "scripts": {
+    "start": "npx eleventy --serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.0-beta.2"
+  }
+}

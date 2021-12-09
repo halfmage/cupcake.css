@@ -1,0 +1,165 @@
+---
+layout: default
+---
+
+<section>
+  <h1>Components</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores odio cupiditate expedita consequuntur, provident dolores exercitationem quasi earum. Accusantium necessitatibus vitae fuga consequatur! Modi delectus illo molestias, unde, eligendi doloremque quas voluptatum, sed fugit veniam eveniet iste voluptate quibusdam corporis?</p>
+  <nav>
+    <a href="#headlines">Headlines</a>
+    <a href="#text-formatting">Text formatting</a>
+    <a href="#lists">Lists</a>
+    <a href="#forms">Form elements</a>
+    <a href="#blockquotes">Blockquotes</a>
+    <a href="#accordions">Accordions</a>
+  </nav>
+</section>
+
+<h2 id="headlines">Headlines & Text</h2>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id illo modi animi, corporis eos maxime beatae.</p>
+
+<h1>This is an h1 headline</h1>
+<h2>This is an h2 headline</h2>
+<h3>This is an h3 headline</h3>
+<h4>This is an h4 headline</h4>
+<h5>This is an h5 headline</h5>
+<h6>This is an h6 headline</h6>
+
+<hr>
+
+<h2 id="text-formatting">Text formatting</h2>
+
+<p>One morning, when <mark>Gregor Samsa</mark> woke from <code>&#x3C;troubled dreams&#x3E;</code>, he found himself <strong>transformed</strong> in his bed into a <em>horrible vermin</em>. He lay on his <u>armour-like</u> back, and if he lifted his head a little he could see his brown belly, slightly domed and <a href="#">divided by arches</a> into stiff sections while he was pressing <kbd>ALT + F4</kbd>. The bedding was <s>easily</s> hardly able to cover it and seemed <abbr>ready to slide</abbr> off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.</p>
+
+<hr>
+
+<h2 id="lists">Lists</h2>
+
+<ul>
+  <li>Chocolate Cupcake</li>
+  <li>Funfetti Cupcake</li>
+  <li>Salted Caramel Cupcake</li>
+</ul>
+
+<ol>
+  <li>Red Velvet Cupcake</li>
+  <li>S'mores Cupcake</li>
+  <li>Lemon Cupcake</li>
+</ol>
+
+<dl>
+  <dt>Triple Salted Caramel Cupcakes</dt>
+  <dd>A luscious zip of salted caramel is present in three ways in these stunning cupcakes, which feature a sculpture of candied sugar perched atop a cloud of silky buttercream.</dd>
+  <dt>Bubbly Champagne Cupcakes</dt>
+  <dd>Give the tastiest toast of the night and say “cheers!” with a round of these celebratory vanilla cupcakes bursting with bubbly.</dd>
+  <dt>Chocolate Covered Strawberry Cupcakes</dt>
+  <dd>This cupcake is the captivating cousin of the ever-luscious chocolate covered strawberry. Whip up a batch for Valentine’s Day and watch the admirers flock your way!</dd>
+</dl>
+
+<hr>
+
+<h2 id="forms">Forms</h2>
+
+<p>This is a cool example for a job application form which has most of the commonly used HTML form elements.</p>
+
+<form action="/">
+    <label>Name *</label>
+    <input type="text" name="name" placeholder="First name" required/>
+    <input type="text" name="name" placeholder="Last name" required/>
+
+    <label>Email *<small>Some helper text</small></label>
+    <input type="text" name="name" required/>
+
+    <label>Phone *</label>
+    <input type="text" name="name" required/>
+
+    <label>What position are you applying for? *</label>
+    <select required>
+      <option value="1">Job 1</option>
+      <option value="2">Job 2</option>
+      <option value="3">Job 3</option>
+      <option value="4">Job 4</option>
+      <option value="5">Job 5</option>
+    </select>
+
+    <label>Available start date *</label>
+    <input type="date" name="bdate" required/>
+
+    <label>What is your current employment status? *</label>
+
+    <input type="radio" value="none" id="radio_1" name="status" required/>
+    <label for="radio_1">Employed</label>
+    <br>
+    <input type="radio" value="none" id="radio_2" name="status" required/>
+    <label for="radio_2">Self-Employed</label>
+    <br>
+    <input type="radio" value="none" id="radio_3" name="status" required/>
+    <label for="radio_3">Unemployed</label>
+    <br>
+    <input type="radio" value="none" id="radio_4" name="status" required/>
+    <label for="radio_4">Student</label>
+
+    <label>What do you prefere most about cupcake.css? *</label>
+
+    <input type="checkbox" value="none" id="checkbox_1" name="status" required/>
+    <label for="checkbox_1">No need of classes</label>
+    <input type="checkbox" value="none" id="checkbox_2" name="status" required/>
+    <label for="checkbox_2">Focus on writing html content</label>
+    <input type="checkbox" value="none" id="checkbox_3" name="status" required/>
+    <label for="checkbox_3">The many different flavors</label>
+
+    <p>Submit your resume by providing your resume URL or attach file:</p>
+    <input type="file" name="file" accept="file/*">
+
+    <button type="button" href="/">Apply For The Job</button>
+    <button type="submit" disabled href="/">Apply For The Job</button>
+    <button type="reset" href="/">Reset</button>
+</form>
+
+<hr>
+
+<h2 id="blockquotes">Blockquotes</h2>
+
+<blockquote>
+  ⚠ You seeing an example that uses a blockquote. Check all <a href="/examples">components page</a> or <a href="/examples">see examples</a>
+</blockquote>
+
+<blockquote cite="https://en.wikipedia.org/wiki/Jane_Louise_Curry">
+  “The little cakes were iced in white, with golden yellow icing roses on top, and instead of ice cream there was sherbet that was a rainbow of colors in each dish.”
+  <cite>Jane Louise Curry</cite>
+</blockquote>
+
+<h2 id="accordions">Accordions</h2>
+
+<details>
+  <summary>
+    Super dead-simple details component (accordion)
+  </summary>
+  <div>
+    This is a dead-simple details element with custom arrow indicators.
+  </div>
+</details>
+
+<details>
+  <summary>
+    <h5>This is a headline inside an accordion</h5>
+  </summary>
+  <div>
+    This is a dead-simple details element with custom arrow indicators.
+  </div>
+</details>
+
+<details>
+  <summary>
+    <img src="https://www.berries.com/blog/wp-content/uploads/2016/01/4-triple-salted.jpg" alt="Triple Salted Caramel Cupcakes" width="80">
+    <strong>Triple Salted Caramel Cupcakes</strong>
+  </summary>
+  <div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut molestiae, praesentium repellendus quis numquam cumque perspiciatis!
+    </p>
+  </div>
+</details>
+
+<hr>
+
