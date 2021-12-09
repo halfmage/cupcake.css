@@ -18,10 +18,13 @@
   "homepage": "https://github.com/halfmage/cupcake-css#readme",
   "scripts": {
     "start": "npx eleventy --serve",
-    "build": "npx eleventy"
+    "build": "npx eleventy && cp src/css/cupcake.css ./cupcake.css && css-minify -f cupcake.css -o /"
   },
   "dependencies": {
     "@11ty/eleventy": "^1.0.0-beta.2",
     "np": "^7.6.0"
+  },
+  "devDependencies": {
+    "css-minify": "^2.0.0"
   }
 }

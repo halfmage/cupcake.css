@@ -15,3 +15,8 @@ Cupcake.css is a classless CSS framework to sweeten up your html pages and gives
 - Minimal approach startup website
 - An maintable portfolio
 
+## Contribution
+
+I made this repositoy especially for testing to have one repository for the website as well for the npm package. All `CSS` is written in `src/css/cupcake.css` and during the build process this file will be copied to root following directly by css-minify to create a minified version of this `CSS` file. Since this project is using `11ty` I can not `passThroughCopy` to the root folder if the input dir is set to src inside the `.eleventy` configuration file.
+
+> Feel free to make changes / updates / fixes in the src/css/cupcake.css file and open a pull request.
