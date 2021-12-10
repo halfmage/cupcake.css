@@ -227,9 +227,9 @@ a {
   color: var(--primary);
 }
 
-/* I keep this here for next version */
+/* Marking email links with an envelop unicode icon */
 a[href^="mailto"]::after {
-  content: " ✉️";
+  content: " ✉";
 }
 
 abbr {
