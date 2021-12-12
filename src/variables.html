@@ -3,8 +3,32 @@ layout: default
 ---
 
 <main>
-  <h3>Colors</h3>
-  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis nam, magnam, iste labore voluptates accusamus consequuntur reprehenderit amet aut, quibusdam laudantium aliquid mollitia debitis.</p>
+  <h1>Variables reference</h1>
+
+  <p>On this page you can check all available names and their default value.</p>
+
+  <h4>Globals</h4>
+  <p>Global variables describing visual-key settings that have an high impact the looks & feel of the website.</p>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Default value</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>--body-wrap</td>
+      <td>64em</td>
+      <td>The default value for wrapping the content inside the <code>body</code>. Leave this empty to make the layout flexible.</td>
+    </tr>
+    <tr>
+      <td>--body-wrap-padding</td>
+      <td>0 calc(50vw - 50%);</td>
+      <td>TBD</td>
+    </tr>
+  </table>
+
+  <h4>Colors</h4>
+  <p>A reference for all color variables.</p>
   <table>
       <tr>
         <th>Name</th>
@@ -14,7 +38,7 @@ layout: default
       <tr>
         <td>--background</td>
         <td>#FAFAFA</td>
-        <td>Color for the background of the page. Buttons get this as text color by default.</td>
+        <td><small>Color for the background of the page. Buttons get this as text color by default.</small></td>
       </tr>
       <tr>
         <td>--text</td>
@@ -58,10 +82,8 @@ layout: default
       </tr>
   </table>
 
-  <hr>
-
-  <h3>Typography</h3>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quisquam sit illo rem. Amet, reprehenderit similique nostrum iure omnis quaerat.</p>
+  <h4>Typography</h4>
+  <p></p>
   <table>
     <tr>
       <th>Name</th>
@@ -83,6 +105,6 @@ layout: default
       <td>'Courier New', Courier, monospace</td>
       <td>Font families mainly used for code and code-blocks</td>
     </tr>
-    
-</table>
+  </table>
+
 </main>

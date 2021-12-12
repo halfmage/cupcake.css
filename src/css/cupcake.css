@@ -39,11 +39,10 @@
   --font-mono:                Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 
   /* Base text variables */
-  --text-headlines:           var(--font-sans);
-  --headline-weight:          700;
-
-  --text-body:                var(--font-sans);
-  --text-weight:              400;
+  --body-font:                var(--font-sans);
+  --body-font-weight:         400;
+  --headlines-font:           var(--font-sans);
+  --headlines-font-weight:    700;
 
   /* Layout options */
   --body-wrap:                64em;
@@ -63,9 +62,9 @@
   --box-shadow:               0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);;
 
   /* Table variables */
-  --table-border:             1px solid var(--grayscale-2);
+  --table-border:             none;
   --table-row-border:         1px solid var(--grayscale-2);
-  --table-col-border:         1px solid var(--grayscale-2);
+  --table-col-border:         none;
   --table-zebra-background:   var(--background);
 
   /* Header variables */
@@ -90,7 +89,7 @@
   --button-color:             var(--grayscale-6);
   --button-padding:           1.5rem 1rem;
   --button-text-transform:    normal;
-  --button-font-weight:       var(--headline-weight);
+  --button-font-weight:       var(--headlines-font-weight);
 
   /* Code variables */
   --code-background:          var(--grayscale-1);
@@ -130,7 +129,7 @@ body {
   margin: 0 auto;
   font-size: 1rem;
   line-height: 1.5rem;
-  font-family: var(--text-body);
+  font-family: var(--body-font);
   color: var(--text);
   background-color: var(--background);
   accent-color: var(--primary);
@@ -202,8 +201,8 @@ h6 { font-size: 1rem;       line-height: 1.5rem; }
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: var(--text-headlines);
-  font-weight: var(--headline-weight);
+  font-family: var(--headlines-font);
+  font-weight: var(--headlines-font-weight);
   margin-bottom: 0;
   margin-top: 2rem;
 }
@@ -216,6 +215,7 @@ h1 + *, h2 + *, h3 + *, h4 + *, h5 + *, h6 + * {
 small {
   font-size: 0.875rem;
   line-height: 1.25rem;
+  color: var(--grayscale-5);
 }
 
 caption {
@@ -341,7 +341,7 @@ table {
 }
 
 table tr:nth-child(even) {
-  background-color: var(--table-zebra);
+  background-color: var(--table-zebra-background);
 }
 
 th, td {
