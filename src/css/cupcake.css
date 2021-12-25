@@ -71,7 +71,7 @@
   --header-alignment:         left;
   --header-background:        var(--background);
   --header-border-bottom:     1px solid var(--grayscale-2);
-  --header-box-shadow:        0;
+  --header-box-shadow:        0 2px 8px rgba(0,0,0,.25);
   
   --header-wrap-margin:       0 calc(0px - (50vw - 50%)) 2rem;
   --header-wrap-padding:      1rem calc(50vw - 50%);
@@ -88,7 +88,7 @@
   --button-radius:            var(--border-radius);
   --button-color:             var(--grayscale-6);
   --button-padding:           1.5rem 1rem;
-  --button-text-transform:    normal;
+  --button-text-transform:    none;
   --button-font-weight:       var(--headlines-font-weight);
 
   /* Code variables */
@@ -165,7 +165,7 @@ nav a + a {
 }
 
 /* Hero component */
-header + section:first-of-type {
+body > section:first-of-type {
   text-align: var(--hero-alignment);
   border-bottom: var(--hero-border-bottom);
   margin: 0 calc(0px - (50vw - 50%)) 2rem;  
@@ -174,10 +174,10 @@ header + section:first-of-type {
   margin-top: -2rem;
 }
 
-header + section:first-of-type > *:first-child {
+body > section:first-of-type > *:first-child {
   margin-top: 0;
 }
-header + section:first-of-type > *:last-child {
+body > section:first-of-type > *:last-child {
   margin-bottom: 0;
 }
 
