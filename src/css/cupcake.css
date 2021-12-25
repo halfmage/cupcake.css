@@ -164,6 +164,10 @@ nav a + a {
   margin-left: .5rem;
 }
 
+main > :first-child {
+  margin-top: 0;
+}
+
 /* Hero component */
 body > section:first-of-type {
   text-align: var(--hero-alignment);
