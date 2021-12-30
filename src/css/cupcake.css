@@ -45,7 +45,7 @@
   --headlines-font-weight:    700;
 
   /* Layout options */
-  --body-wrap:                64em;
+  --body-wrap:                1140px;
   --body-wrap-padding:        0 calc(50vw - 50%);
 
   /* Definition list variables */
@@ -77,9 +77,9 @@
   --header-wrap-padding:      1rem calc(50vw - 50%);
 
   /* Hero variables */
-  --hero-alignment:           left;
+  --hero-alignment:           center;
   --hero-border-bottom:       1px solid var(--grayscale-2);
-  --hero-y-padding:           4rem;
+  --hero-y-padding:           8rem;
   --hero-background:          var(--grayscale-1);
 
   /* Button variables */
@@ -148,6 +148,10 @@ header {
   background: var(--header-background);
   border-bottom: var(--header-border-bottom);
   text-align: var(--header-alignment);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header > h1 {
@@ -157,7 +161,7 @@ header > h1 {
 }
 
 header > h1 + * {
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 nav a + a {
@@ -381,7 +385,7 @@ button:hover {
 }
 
 button[type="reset"] {
-  background: var(--background);
+  background: transparent;
   color: var(--primary);
 }
 
