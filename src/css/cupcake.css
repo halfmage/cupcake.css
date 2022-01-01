@@ -33,7 +33,7 @@
   --primary:                #14B8A6;
   --accent:                 #F97316;
 
-  --base-fontScale:           16px;
+  --base-fontScale:           18px;
   --base-borderRadius:        8px;
   --base-boxShadow:           0 1px 3px 0 rgba(0, 0, 0, 0.1),
                               0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -50,7 +50,7 @@
   --headlines-font-weight:    700;
 
   /* Layout options */
-  --layout-wrap:              1140px;
+  --layout-wrap:              1440px;
   --layout-wrap-padding:      0 calc((50vw - 50%) + 2rem);
 
   /* Definition list variables */
@@ -75,7 +75,7 @@
   --header-box-shadow:        0 2px 8px rgba(0,0,0,.25);
   
   --header-wrap-margin:       0 calc(0px - (50vw - 50%)) 2rem;
-  --header-wrap-padding:      2rem calc(50vw - 50%);
+  --header-wrap-padding:      1.5rem calc(50vw - 50%);
 
   /* Hero variables */
   --hero-alignment:           center;
@@ -93,8 +93,8 @@
   --button-font-weight:       var(--headlines-font-weight);
 
   /* Code variables */
-  --code-background:          var(--grayscale-1);
-  --code-color:               var(--grayscale-5);
+  --code-background:          var(--grayscale-6);
+  --code-color:               var(--grayscale-1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -153,6 +153,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 header > h1 {
@@ -167,6 +168,12 @@ header > h1 + * {
 
 header a {
   text-decoration: none;
+  color: var(--grayscale-4);
+}
+
+header a:hover,
+header a:focus {
+  color: var(--grayscale-6);
 }
 
 nav a + a {
@@ -495,7 +502,7 @@ select + textarea,
 textarea + textarea,
 textarea + input,
 textarea + select {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 input[type="text"],
@@ -506,12 +513,12 @@ input[type="date"],
 input[type="file"],
 select,
 textarea {
-  background: var(--grayscale-1);
+  background: var(--background);
   border: 1px solid var(--grayscale-3);
   border-radius: var(--base-borderRadius);
   box-shadow: var(--base-boxShadow);
   color: var(--text);
-  padding: .5rem;
+  padding: 1rem;
   font-size: 1rem;
   line-height: 1.5rem;
   display: block;
