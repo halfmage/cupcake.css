@@ -33,6 +33,11 @@
   --primary:                #14B8A6;
   --accent:                 #F97316;
 
+  --base-fontScale:           16px;
+  --base-borderRadius:        8px;
+  --base-boxShadow:           0 1px 3px 0 rgba(0, 0, 0, 0.1),
+                              0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
   /* Typography variables */
   --font-sans:                -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --font-serif:               Georgia, 'Times New Roman', Times, serif;
@@ -45,8 +50,8 @@
   --headlines-font-weight:    700;
 
   /* Layout options */
-  --body-wrap:                1140px;
-  --body-wrap-padding:        0 calc(50vw - 50%);
+  --layout-wrap:              1140px;
+  --layout-wrap-padding:      0 calc((50vw - 50%) + 2rem);
 
   /* Definition list variables */
   --list-symbol:              "➔";
@@ -55,11 +60,7 @@
   --details-background:       var(--background);
   --details-border:           2px solid var(--grayscale-2);
   --details-padding:          .75rem 1rem;
-  --details-border-radius:    var(--border-radius);
-
-  /* General style variables */
-  --border-radius:            4px;
-  --box-shadow:               0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);;
+  --details-border-radius:    var(--base-borderRadius);
 
   /* Table variables */
   --table-border:             none;
@@ -74,7 +75,7 @@
   --header-box-shadow:        0 2px 8px rgba(0,0,0,.25);
   
   --header-wrap-margin:       0 calc(0px - (50vw - 50%)) 2rem;
-  --header-wrap-padding:      1rem calc(50vw - 50%);
+  --header-wrap-padding:      2rem calc(50vw - 50%);
 
   /* Hero variables */
   --hero-alignment:           center;
@@ -85,7 +86,7 @@
   /* Button variables */
   --button-background:        var(--primary);
   --button-border:            1px solid var(--primary);
-  --button-radius:            var(--border-radius);
+  --button-radius:            var(--base-borderRadius);
   --button-color:             var(--grayscale-6);
   --button-padding:           1.5rem 1rem;
   --button-text-transform:    none;
@@ -121,19 +122,19 @@
 }
 
 html {
+  font-size: var(--base-fontScale);
+  font-family: var(--body-font);
+  line-height: 1.5;
+  accent-color: var(--primary);
 }
 
 body {
-  max-width: var(--body-wrap);
-  padding: var(--body-wrap-padding);
-  margin: 0 auto;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-family: var(--body-font);
+  max-width: var(--layout-wrap);
   color: var(--text);
   background-color: var(--background);
-  accent-color: var(--primary);
   overflow-x: hidden;
+  margin: 0 auto;
+  padding: var(--layout-wrap-padding);
 }
 
 img {
@@ -162,6 +163,10 @@ header > h1 {
 
 header > h1 + * {
   margin-top: 0;
+}
+
+header a {
+  text-decoration: none;
 }
 
 nav a + a {
@@ -258,7 +263,7 @@ code {
   background: var(--code-background);
   color: var(--code-color);
   padding: .125rem;
-  border-radius: var(--border-radius);
+  border-radius: var(--base-borderRadius);
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
@@ -277,8 +282,8 @@ pre {
   color: var(--code-color);
   margin: 0;
   padding: 1rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  border-radius: var(--base-borderRadius);
+  box-shadow: var(--base-boxShadow);
 }
 
 pre code {
@@ -293,8 +298,8 @@ blockquote {
   margin-right: 0;
   padding: 1rem;
   border-left: 4px solid var(--grayscale-3);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  border-radius: var(--base-borderRadius);
+  box-shadow: var(--base-boxShadow);
   vertical-align: middle;
 }
 
@@ -315,7 +320,7 @@ kbd {
   border: 1px solid var(--grayscale-3);
   border-bottom-width: 3px;
   font-size: 0.875rem;
-  border-radius: var(--border-radius);
+  border-radius: var(--base-borderRadius);
   font-weight: 700;
   white-space: nowrap;
 }
@@ -368,7 +373,7 @@ hr {
 button {
   background: var(--button-background);
   border: var(--button-border);
-  border-radius: var(--border-radius);
+  border-radius: var(--base-borderRadius);
   color: var(--button-color);
   font-weight: var(--button-font-weight);
   padding: var(--button-padding);
@@ -423,7 +428,7 @@ details > div {
   border: 2px solid var(--grayscale-2);
   margin-top: 0;
   padding: 1rem;
-  border-radius: var(--border-radius);
+  border-radius: var(--base-borderRadius);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -503,8 +508,8 @@ select,
 textarea {
   background: var(--grayscale-1);
   border: 1px solid var(--grayscale-3);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  border-radius: var(--base-borderRadius);
+  box-shadow: var(--base-boxShadow);
   color: var(--text);
   padding: .5rem;
   font-size: 1rem;
