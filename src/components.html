@@ -68,10 +68,17 @@ layout: default
     <input type="text" name="name" placeholder="Last name" required/>
 
     <label>Email *<small>Some helper text</small></label>
-    <input type="text" name="name" required/>
+    <input type="email" name="email" required/>
 
     <label>Phone *</label>
-    <input type="text" name="name" required/>
+    <input type="tel" name="phone" required/>
+    <small>Only numbers are allowed here</small>
+
+    <label>Available start date *</label>
+    <input type="date" name="bdate" required/>
+
+    <label>Website url *</label>
+    <input type="url" name="url" required/>
 
     <label>What position are you applying for? *</label>
     <select required>
@@ -82,31 +89,37 @@ layout: default
       <option value="5">Job 5</option>
     </select>
 
-    <label>Available start date *</label>
-    <input type="date" name="bdate" required/>
+    <fieldset>
+      <legend>What is your current employment status? *</legend>
+      <label for="radio--1">
+        <input type="radio" id="radio--1" name="radio" value="radio--1">
+        Radio button list item
+      </label>
+      <label for="radio--2">
+        <input type="radio" id="radio--2" name="radio" value="radio--2">
+        Radio button list item
+      </label>
+      <label for="radio--3">
+        <input type="radio" id="radio--3" name="radio" value="radio--3">
+        Radio button list item
+      </label>
+    </fieldset>
 
-    <label>What is your current employment status? *</label>
-
-    <input type="radio" value="none" id="radio_1" name="status" required/>
-    <label for="radio_1">Employed</label>
-    <br>
-    <input type="radio" value="none" id="radio_2" name="status" required/>
-    <label for="radio_2">Self-Employed</label>
-    <br>
-    <input type="radio" value="none" id="radio_3" name="status" required/>
-    <label for="radio_3">Unemployed</label>
-    <br>
-    <input type="radio" value="none" id="radio_4" name="status" required/>
-    <label for="radio_4">Student</label>
-
-    <label>What do you prefere most about cupcake.css? *</label>
-
-    <input type="checkbox" value="none" id="checkbox_1" name="status" required/>
-    <label for="checkbox_1">No need of classes</label>
-    <input type="checkbox" value="none" id="checkbox_2" name="status" required/>
-    <label for="checkbox_2">Focus on writing html content</label>
-    <input type="checkbox" value="none" id="checkbox_3" name="status" required/>
-    <label for="checkbox_3">The many different flavors</label>
+    <fieldset>
+      <legend>What do you prefere most about cupcake.css? *</legend>
+      <label for="checkbox--1">
+        <input type="checkbox" id="checkbox--1" name="checkbox" value="checkbox--1">
+        Checkbox button list item
+      </label>
+      <label for="checkbox--2">
+        <input type="checkbox" id="checkbox--2" name="checkbox" value="checkbox--2">
+        Checkbox button list item
+      </label>
+      <label for="checkbox--3">
+        <input type="checkbox" id="checkbox--3" name="checkbox" value="checkbox--3">
+        Checkbox button list item
+      </label>
+    </fieldset>
 
     <p>Submit your resume by providing your resume URL or attach file:</p>
     <input type="file" name="file" accept="file/*">

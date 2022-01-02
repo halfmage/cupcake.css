@@ -505,20 +505,25 @@ textarea + select {
   margin-top: 1rem;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="password"],
-input[type="date"],
-input[type="file"],
+/* Spacing for small text after input fields */
+input + small,
+select + small,
+textarea + small {
+  margin-top: 0.25rem;  
+  margin-bottom: 1rem;
+  display: block;
+}
+
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"])[type="date"],
 select,
 textarea {
-  background: var(--background);
+  background-color: var(--background);
   border: 1px solid var(--grayscale-3);
   border-radius: var(--base-borderRadius);
   box-shadow: var(--base-boxShadow);
   color: var(--text);
-  padding: 1rem;
+  padding: 1rem 1.25rem;
   font-size: 1rem;
   line-height: 1.5rem;
   display: block;
@@ -533,4 +538,26 @@ input[type="date"]:focus,
 input[type="file"]:focus,
 textarea:focus {
   outline-color: var(--primary);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+fieldset legend {
+  margin-bottom: 1rem;
+}
+
+
+/* Select or dropdown styles */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; 
+  background-position: center right 1.25rem;
+  background-size: 1rem auto;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' stroke='rgba(150, 150, 150, 0.999)' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
 }
