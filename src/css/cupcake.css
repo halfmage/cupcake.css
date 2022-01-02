@@ -514,8 +514,7 @@ textarea + small {
   display: block;
 }
 
-
-input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"])[type="date"],
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]),
 select,
 textarea {
   background-color: var(--background);
